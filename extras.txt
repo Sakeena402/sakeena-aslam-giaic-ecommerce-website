@@ -1,0 +1,165 @@
+Extra Small Screens (XS): 0px - 639px
+Small Screens (SM): 640px - 767px
+Medium Screens (MD): 768px - 1023px
+Large Screens (LG): 1024px - 1279px
+Extra Large Screens (XL): 1280px and above
+
+final words 770-1113 mia iskiwidth set krni hy oe us footer k elemnent respomsive krny hain
+
+/* styles.css */
+@media (max-width: 639px) {
+  /* Extra small devices (phones, 0px - 639px) */
+  .class-name {
+    /* Your styles for extra small screens */
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  /* Small devices (tablets, 640px - 767px) */
+  .class-name {
+    /* Your styles for small screens */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Medium devices (landscape tablets, 768px - 1023px) */
+  .class-name {
+    /* Your styles for medium screens */
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Large devices (laptops/desktops, 1024px - 1279px) */
+  .class-name {
+    /* Your styles for large screens */
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Extra large devices (desktops, 1280px and above) */
+  .class-name {
+    /* Your styles for extra large screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+<motion.div
+         initial={{ opacity: 0, y: -20 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         transition={{ duration: 1 }}
+         className="bg-black absolute z-20   left-[6rem]  top-[35rem] text-white py-4  flex   rounded-[1.5rem] space-x-6 px-11"
+       >
+         <div className="w-3/5 justify-items-center ">
+         <h2 className="text-white lg:text-5xl font-extrabold tracking-tighter text-left mx-auto leading-none scale-y-90 md:text-3xl">
+        <span>STAY UPTO DATE ABOUT</span> <br /> 
+        <span>OUR LATEST UPDATE</span>
+       </h2>
+        
+         </div>
+       
+
+         <div className="space-y-4 ">
+          
+             <form className="w-full">
+               <input
+                 type="email"
+                 placeholder="Email address"
+                 className="w-full my-2  h-12 pl-10 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
+               />
+
+               <button className="w-full  my-2 text-center  h-12 pl-10 pr-4 font-bold text-gray-700 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500">
+            
+                 Submit
+               </button>
+             </form>
+            
+           </div>
+       </motion.div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       GRID BOX
+
+       'use client';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { Navbar } from "./components/Navbar";
+import Footer from "./components/Footer";
+
+export default function Home() {
+  type ScreenDimensions = {
+    width: number;
+    height: number;
+  };
+
+  const useScreenDimensions = (): ScreenDimensions => {
+    const [dimensions, setDimensions] = useState<ScreenDimensions>({
+      width: 0,
+      height: 0,
+    });
+
+    useEffect(() => {
+      const updateDimensions = () => {
+        setDimensions({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
+
+      updateDimensions();
+      window.addEventListener("resize", updateDimensions);
+
+      return () => window.removeEventListener("resize", updateDimensions);
+    }, []);
+
+    return dimensions;
+  };
+
+  const { width, height } = useScreenDimensions();
+
+  return (
+    <div className="relative min-h-screen flex flex-col overflow-hidden bg-gray-50">
+      <Navbar />
+
+      <main className="flex-grow p-4">
+        {/* Hero Section */}
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+          {Array.from({ length: 8 }, (_, i) => (
+            <div
+              key={i}
+              className="h-48 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300"
+            >
+              <p className="text-lg font-medium text-gray-700">
+                Grid Box {i + 1}
+              </p>
+            </div>
+          ))}
+        </section>
+      </main>
+
+      <footer className="w-full bg-gray-200">
+        <Footer />
+      </footer>
+    </div>
+  );
+}
