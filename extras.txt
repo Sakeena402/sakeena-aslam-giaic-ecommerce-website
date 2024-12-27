@@ -163,3 +163,93 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+Here’s a step-by-step guide with all the necessary Git commands to create a new repository and push your project to it:
+
+---
+
+### **1. Initialize a Git Repository**
+If your project isn’t already a Git repository:
+
+```bash
+git init
+```
+
+---
+
+### **2. Stage Your Files**
+Add all the files in your project to the staging area:
+
+```bash
+git add .
+```
+
+---
+
+### **3. Commit Your Files**
+Commit your changes with a meaningful message:
+
+```bash
+git commit -m "Initial commit"
+```
+
+---
+
+### **4. Create a New Repository on GitHub**
+Go to [GitHub](https://github.com/) (or your preferred Git hosting platform) and:
+- Click on the **New Repository** button.
+- Enter a name for your repository.
+- Choose visibility (public/private).
+- Do **not** initialize with a README (you already have files locally).
+
+Copy the repository URL provided.
+
+---
+
+### **5. Add the Remote Repository**
+Link your local repository to the GitHub repository:
+
+```bash
+git remote add origin <repository-url>
+```
+
+Example:
+
+```bash
+git remote add origin https://github.com/your-username/your-repository.git
+```
+
+---
+
+### **6. Push Your Code**
+Push your local code to the GitHub repository:
+
+```bash
+git branch -M main
+git push -u origin main
+```
+
+---
+
+### **Full Command Sequence**
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/your-username/your-repository.git
+git branch -M main
+git push -u origin main
+```
+
+---
+
+### **7. Verify**
+- Go to your GitHub repository URL.
+- Refresh the page to see your files successfully uploaded.
+
+---
+
+Let me know if you need help with any step! 😊
