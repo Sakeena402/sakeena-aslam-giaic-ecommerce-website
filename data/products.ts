@@ -6,6 +6,7 @@ export interface Product {
     price: number;
     originalPrice?: number;
     discount?: number;
+    category?:string;
   }
   export interface Review {
     rating: number;
@@ -117,6 +118,221 @@ export interface Product {
   ];
   
 
+
+
+  export const products3: Product[] = [
+    {
+      image: './Frame9.png',
+      title: 'T-shirt with Tape Details',
+      rating: 4.5,
+      reviews: 5,
+      price: 120,
+      category: 'T-Shirts',
+    },
+    {
+      image: './Frame10.png',
+      title: 'Skinny Fit Jeans',
+      rating: 3.5,
+      reviews: 3,
+      price: 240,
+      originalPrice: 260,
+      discount: 20,
+      category: 'Jeans',
+    },
+    {
+      image: './Frame11.png',
+      title: 'Checkered Shirt',
+      rating: 4.5,
+      reviews: 4,
+      price: 180,
+      category: 'Shirts',
+    },
+    {
+      image: './Frame12.png',
+      title: 'Sleeve Striped T-shirt',
+      rating: 4.5,
+      reviews: 4,
+      price: 130,
+      originalPrice: 160,
+      discount: 30,
+      category: 'T-Shirts',
+    },
+    {
+      image: './Frame1.png',
+      title: 'Casual Hoodie',
+      rating: 4.0,
+      reviews: 7,
+      price: 300,
+      originalPrice: 350,
+      discount: 50,
+      category: 'Hoodies',
+    },
+    {
+      image: './Frame2.png',
+      title: 'Sports Shorts',
+      rating: 4.3,
+      reviews: 6,
+      price: 90,
+      category: 'Shorts',
+    },
+    {
+      image: './Frame3.png',
+      title: 'Formal Blazer',
+      rating: 4.8,
+      reviews: 8,
+      price: 450,
+      originalPrice: 500,
+      discount: 50,
+      category: 'Formal Wear',
+    },
+    {
+      image: './Frame4.png',
+      title: 'Cargo Pants',
+      rating: 4.6,
+      reviews: 5,
+      price: 250,
+      category: 'Pants',
+    },
+    {
+      image: './Frame5.png',
+      title: 'Party Wear Dress',
+      rating: 4.9,
+      reviews: 12,
+      price: 600,
+      category: 'Party Wear',
+    },
+    {
+      image: './Frame6.png',
+      title: 'Gym Wear Tights',
+      rating: 4.3,
+      reviews: 10,
+      price: 200,
+      category: 'Gym Wear',
+    },
+    {
+      image: './Frame7.png',
+      title: 'Denim Jacket',
+      rating: 4.7,
+      reviews: 9,
+      price: 350,
+      category: 'Jackets',
+    },
+    {
+      image: './Frame11.png',
+      title: 'Denim Jacket',
+      rating: 4.7,
+      reviews: 9,
+      price: 350,
+      category: 'Jackets',
+    },
+
+
+    {
+      image: './Frame9.png',
+      title: 'T-shirt with Tape Details',
+      rating: 4.5,
+      reviews: 5,
+      price: 120,
+      category: 'T-Shirts',
+    },
+    {
+      image: './Frame10.png',
+      title: 'Skinny Fit Jeans',
+      rating: 3.5,
+      reviews: 3,
+      price: 240,
+      originalPrice: 260,
+      discount: 20,
+      category: 'Jeans',
+    },
+    {
+      image: './Frame11.png',
+      title: 'Checkered Shirt',
+      rating: 4.5,
+      reviews: 4,
+      price: 180,
+      category: 'Shirts',
+    },
+    {
+      image: './Frame12.png',
+      title: 'Sleeve Striped T-shirt',
+      rating: 4.5,
+      reviews: 4,
+      price: 130,
+      originalPrice: 160,
+      discount: 30,
+      category: 'T-Shirts',
+    },
+    {
+      image: './Frame1.png',
+      title: 'Casual Hoodie',
+      rating: 4.0,
+      reviews: 7,
+      price: 300,
+      originalPrice: 350,
+      discount: 50,
+      category: 'Hoodies',
+    },
+    {
+      image: './Frame2.png',
+      title: 'Sports Shorts',
+      rating: 4.3,
+      reviews: 6,
+      price: 90,
+      category: 'Shorts',
+    },
+    {
+      image: './Frame3.png',
+      title: 'Formal Blazer',
+      rating: 4.8,
+      reviews: 8,
+      price: 450,
+      originalPrice: 500,
+      discount: 50,
+      category: 'Formal Wear',
+    },
+    {
+      image: './Frame4.png',
+      title: 'Cargo Pants',
+      rating: 4.6,
+      reviews: 5,
+      price: 250,
+      category: 'Pants',
+    },
+    {
+      image: './Frame5.png',
+      title: 'Party Wear Dress',
+      rating: 4.9,
+      reviews: 12,
+      price: 600,
+      category: 'Party Wear',
+    },
+    {
+      image: './Frame6.png',
+      title: 'Gym Wear Tights',
+      rating: 4.3,
+      reviews: 10,
+      price: 200,
+      category: 'Gym Wear',
+    },
+    {
+      image: './Frame7.png',
+      title: 'Denim Jacket',
+      rating: 4.7,
+      reviews: 9,
+      price: 350,
+      category: 'Jackets',
+    },
+    {
+      image: './Frame11.png',
+      title: 'Denim Jacket',
+      rating: 4.7,
+      reviews: 9,
+      price: 350,
+      category: 'Jackets',
+    },
+  ];
+  
 
   export const dressStyleData = [
     {

@@ -8,6 +8,7 @@ interface ProductCardProps {
   price: number;
   originalPrice?: number;
   discount?: number;
+  category?:string;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
