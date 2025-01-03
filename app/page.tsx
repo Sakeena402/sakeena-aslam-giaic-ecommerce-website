@@ -50,7 +50,9 @@ export default function Home() {
 
       {/* Row 3: Section 1 */}
       <div className="row-span-1 bg-white p-6 flex items-center justify-center ">
-      <ProductList products={products} title="NEW ARRIVALS" />
+      <ProductList products={products} title="NEW ARRIVALS" 
+      
+      />
         
       </div>
 

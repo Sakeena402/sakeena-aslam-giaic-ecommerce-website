@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { FaSearch, FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import SearchBar from "./SearchBar";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,7 +40,11 @@ export const Navbar = () => {
 
           {/* Logo */}
           <div className="text-black lg:text-5xl  text-3xl font-extrabold tracking-tighter leading-none scale-y-75 md:text-4xl ">
-            SHOP.CO
+          <a
+    href="/"
+   
+  >
+    SHOP.CO </a>
           </div>
         </div>
 
@@ -49,25 +54,25 @@ export const Navbar = () => {
 
 <div className="hidden flex-1 justify-center md:flex lg:space-x-4 sm:space-x-3">
   <a
-    href="#"
+    href="/"
     className="text-black hover:text-gray-600 transition duration-300 md:text-sm lg:text-base"
   >
     Shop
   </a>
   <a
-    href="#about"
+    href="/"
     className="text-black hover:text-gray-600 transition duration-300 md:text-sm lg:text-base"
   >
     On Sale
   </a>
   <a
-    href="#services"
+    href="/"
     className="text-black hover:text-gray-600 transition duration-300 md:text-sm lg:text-base"
   >
     New Arrivals
   </a>
   <a
-    href="#contact"
+    href="/"
     className="text-black hover:text-gray-600 transition duration-300 md:text-sm lg:text-base"
   >
     Brands
@@ -85,7 +90,11 @@ export const Navbar = () => {
           <button className="md:hidden">
             <FaSearch className="text-gray-800 h-6 w-6 cursor-pointer" />
           </button>
+
+          
+          <Link href="/cart" className="text-blue-500 underline">
           <FaShoppingCart className="text-gray-800 h-6 w-6 cursor-pointer" />
+</Link>
           <FaUserCircle className="text-gray-800 h-6 w-6 cursor-pointer" />
         </div>
       </div>
