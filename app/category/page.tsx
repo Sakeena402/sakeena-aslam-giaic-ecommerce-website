@@ -96,7 +96,14 @@ const Page = (props: Props) => {
     <div className="w-full grid grid-cols-1 grid-rows-[auto] border-t border-gray-300">
       {/* Breadcrumb Section */}
       <div className="w-full p-6">
-        <BreadCrumbs />
+      <BreadCrumbs
+  breadcrumbs={[
+    { name: "Home", link: "/" },
+    { name: "Components", link: "/components" },
+    { name: "Casual" } // No link for the last breadcrumb
+  ]}
+/>
+
       </div>
 
       {/* Main Content */}

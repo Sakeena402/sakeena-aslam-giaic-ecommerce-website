@@ -190,6 +190,7 @@
 'use client';
 import { useCart } from '@/contexts/CartContext';
 import React, { useState } from 'react';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 
 
 const CartPage = () => {
@@ -213,7 +214,15 @@ const CartPage = () => {
 
   return (
     <div className="p-4 md:p-8 bg-white">
-      <div className="text-sm text-gray-600 mb-4">Home &gt; Cart</div>
+ <div className="w-full pb-8">
+      <BreadCrumbs
+  breadcrumbs={[
+    { name: "Home", link: "/" },
+    { name: "Cart" } // No link for the last breadcrumb
+  ]}
+/>
+
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Cart Items Section */}

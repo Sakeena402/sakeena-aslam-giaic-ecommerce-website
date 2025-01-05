@@ -4,6 +4,7 @@ type FeedbackCardProps = {
   rating: number;
   customerName: string;
   review: string;
+   
 };
 
 const FeedbackCard: React.FC<FeedbackCardProps> = ({ rating, customerName, review }) => {
