@@ -127,8 +127,8 @@ import SizeSelector from "../components/SizeSelector";
 import RatingReviews from "../components/RatingReviews";
 import { products, reviews } from "@/data/products";
 import ProductList from "../components/ProductList";
-import { CustomerFeedbackCarousel } from "../components/FeedbackCarousel";
 import { BreadCrumbs } from "../components/BreadCrumbs";
+
 
 const ProductPage: React.FC = () => {
   const [selectedColor, setSelectedColor] = useState<string>("brown");
