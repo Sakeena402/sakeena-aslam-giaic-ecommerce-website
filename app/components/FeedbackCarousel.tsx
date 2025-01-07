@@ -9,8 +9,11 @@ interface Review {
   customerName: string;
   review: string;
 }
+interface CustomerFeedbackCarouselProps {
+  reviews: Review[];
+}
 
-export function CustomerFeedbackCarousel() {
+export function CustomerFeedbackCarousel({ reviews }: CustomerFeedbackCarouselProps) {
   return (
     <div className="flex flex-col p-0 m-0 overflow-hidden w-full  bg-white">
       <h2 className="text-4xl md:text-4xl lg:text-5xl font-extrabold text-black tracking-tighter leading-tight text-start mb-4">
