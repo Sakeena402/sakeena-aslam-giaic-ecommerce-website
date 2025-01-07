@@ -24,8 +24,8 @@ type Product = {
 type CartContextType = {
   cart: Product[];
   addToCart: (product: Product) => void;
-  removeFromCart: (id: number |undefined) => void;
-  updateQuantity: (id: number |undefined, quantity: number) => void;
+  removeFromCart: (id: any) => void;
+  updateQuantity: (id: any, quantity: number) => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -38,11 +38,11 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setCart((prevCart) => [...prevCart, { ...product, quantity: 1 }]); // Adds a new instance of the product with quantity 1
   };
 
-  const removeFromCart = (id: number |undefined) => {
+  const removeFromCart = (id: any) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
-  const updateQuantity = (id: number|undefined, quantity: number) => {
+  const updateQuantity = (id: any, quantity: number) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
         item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
