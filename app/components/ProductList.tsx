@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 import { useCart } from '@/contexts/CartContext';
 
 type Product = {
-  id: number; // Add unique ID for each product
+  id?: number; // Add unique ID for each product
   image: string;
   title: string;
   rating: number;
