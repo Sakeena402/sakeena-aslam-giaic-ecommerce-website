@@ -4,16 +4,16 @@ import ProductCard from './ProductCard';
 import { useCart } from '@/contexts/CartContext';
 
 type Product = {
-  id?: number; // Add unique ID for each product
-  image: string;
-  title: string;
-  rating: number;
-  reviews: number;
-  price: number;
-  originalPrice?: number | null;
-  discount?: number | null;
-  category?: string;
-  quantity?: number | null;
+    id?: number | null;
+    image: string;
+    title: string;
+    rating: number;
+    reviews: number;
+    price: number;
+    originalPrice?: number | null | undefined;
+    discount?: number | null;
+    category?: string;
+    quantity?: number | null;
 };
 
 type ProductListProps = {

@@ -1,13 +1,14 @@
 export interface Product {
+  id?: number | null;
     image: string;
     title: string;
     rating: number;
     reviews: number;
     price: number;
-    originalPrice?: number;
-    discount?: number;
-    category?:string;
-    quantity?:number
+    originalPrice?: number | null | undefined;
+    discount?: number | null;
+    category?: string;
+    quantity?: number | null;
   }
   export interface Review {
     rating: number;

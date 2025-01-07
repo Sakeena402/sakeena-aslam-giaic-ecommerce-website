@@ -81,15 +81,8 @@ import React from "react";
 import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 
 interface ProductCardProps {
-  // id?: number;
-  // image: string;
-  // title: string;
-  // rating: number;
-  // reviews: number;
-  // price: number;
-  // originalPrice?: number | null | undefined;
-  // discount?: number;
-  id?: number;
+
+  id?: number | null;
   image: string;
   title: string;
   rating: number;

@@ -7,7 +7,7 @@ import { PaginationDemo } from "./Pagination"; // Assuming this is the custom Pa
 import { useCart } from "@/contexts/CartContext";
 
 type Product = {
-  id?: number;
+  id?: number  | null;
   image: string;
   title: string;
   rating: number;
