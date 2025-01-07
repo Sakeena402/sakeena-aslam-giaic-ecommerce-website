@@ -12,6 +12,8 @@ type Product = {
   originalPrice?: number | null;
   discount?: number | null;
   category?: string;
+  size?: string;
+  color?:string;
   quantity?: number;
 };
 
