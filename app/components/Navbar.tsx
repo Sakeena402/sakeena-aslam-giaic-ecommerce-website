@@ -66,13 +66,13 @@ export const Navbar = () => {
     On Sale
   </a>
   <a
-    href="/"
+    href="/category"
     className="text-black hover:text-gray-600 transition duration-300 md:text-sm lg:text-base"
   >
     New Arrivals
   </a>
   <a
-    href="/"
+    href="/products"
     className="text-black hover:text-gray-600 transition duration-300 md:text-sm lg:text-base"
   >
     Brands

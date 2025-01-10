@@ -75,7 +75,8 @@ export default function Home() {
       <div className="row-span-1 overflow-x-hidden bg-white p-4  ">
   <CustomerFeedbackCarousel reviews={reviews} />
 </div>
-
+<br />
+<br /><br /><br />
       {/* Row 7: Section 5 */}
       {/* <div className="row-span-1 bg-white p-8 flex items-center justify-center"> */}
         {/* Additional Section Content */}

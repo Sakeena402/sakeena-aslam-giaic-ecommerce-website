@@ -53,36 +53,36 @@ style={{ clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%,
     </section>
     
     <section >
-    <div className="w-full  bg-black h-auto py-6 flex justify-evenly items-center  space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-14">
+    <div className="w-full  bg-black h-auto py-6 flex justify-evenly items-center  space-x-2 sm:space-x-6 md:space-x-8 lg:space-x-14">
     {/* Gucci */}
     <img
       src="./gucci-logo-1 1.png"
       alt="Gucci Logo"
-      className="lg:h-7 md:h-6 h-4 object-contain"
+      className="lg:h-7 md:h-6 sm:h-5 h-2 object-contain"
     />
     {/* Versace */}
     <img
       src="./Group.png"
       alt="Versace Logo"
-      className="lg:h-7 md:h-6 h-4 object-contain"
+      className="lg:h-7 md:h-6  sm:h-5 h-2 object-contain"
     />
     {/* Prada */}
     <img
       src="./prada-logo-1 1.png"
       alt="Prada Logo"
-      className="lg:h-7 md:h-6 h-5 object-contain"
+      className="lg:h-7 md:h-6  sm:h-5 h-2 object-contain"
     />
     {/* Zara */}
     <img
       src="./zara-logo-1 1.png"
       alt="Zara Logo"
-      className="lg:h-7 md:h-6 h-5 object-contain"
+      className="lg:h-7 md:h-6  sm:h-5 h-2 object-contain"
     />
     {/* Calvin Klein */}
     <img
       src="./Group (1).png"
       alt="Calvin Klein Logo"
-      className="lg:h-7 md:h-6 h-5 object-contain"
+      className="lg:h-7 md:h-6  sm:h-5 h-2 object-contain"
     />
   </div>
 </section>
