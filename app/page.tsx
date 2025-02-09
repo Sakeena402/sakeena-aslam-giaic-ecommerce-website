@@ -4,53 +4,43 @@ import { Navbar } from "./components/Navbar";
 import Footer from "./components/Footer";
 import { HeroSection } from "./components/HeroSection";
 import ProductList from "./components/ProductList";
-import {products, products2, reviews} from '@/data/products'
+ import {reviews} from '@/data/products'
 import { CustomerFeedbackCarousel } from "./components/FeedbackCarousel";
 import StyleSection from "./components/StyleSection";
+// import importProducts from '../data/importData'
+import useSWR from "swr";
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Home() {
-  // Hook to get screen dimensions
-  const useScreenDimensions = () => {
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  
+  const { data: products, error } = useSWR("/api/products", fetcher, { dedupingInterval: 60000 });
 
-    useEffect(() => {
-      const updateDimensions = () => {
-        setDimensions({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-      };
+  if (!products) return <div>Loading...</div>;
+  if (error) return <div>Error fetching products.</div>;
+// Sort and filter products
+const newArrivals = [...products]
+.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // Sort by newest
+.slice(0, 4); // Take top 4
 
-      updateDimensions();
-      window.addEventListener("resize", updateDimensions);
+const topSelling = [...products]
+.sort((a, b) => (b.rating || 0) - (a.rating || 0)) // Sort by highest rating
+.slice(0, 4); // Take top 4
 
-      return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
-
-    return dimensions;
-  };
-
-  const { width, height } = useScreenDimensions();
-
+  
   return (
     <div className="grid grid-rows-[auto]  gap-20   min-h-screen w-full">
-      {/* Row 1: Navbar */}
-      {/* <div className="row-span-1  bg-white  w-full ">
-        <Navbar />
-      </div> */}
+    
 
       {/* Row 2: Hero Section */}
       <div className="row-span-1 bg-[#F2F0F1]  w-full ">
-        {/* <h1 className="text-4xl font-bold text-gray-800">
-          Welcome to the Dashboard
-        </h1> */}
+       
 
       <HeroSection />
       </div>
 
       {/* Row 3: Section 1 */}
       <div className="row-span-1 bg-white p-6 flex items-center justify-center ">
-      <ProductList products={products} title="NEW ARRIVALS" 
+      <ProductList products={newArrivals} title="NEW ARRIVALS" 
       
       />
         
@@ -58,7 +48,7 @@ export default function Home() {
 
       {/* Row 4: Section 2 */}
       <div className="row-span-1 bg-white p-6 flex items-center justify-center  border-t border-gray-200">
-      <ProductList products={products2} title="TOP SELLING" />
+      <ProductList products={topSelling} title="TOP SELLING" />
         {/* <p className="text-xl text-gray-700">Screen Width: {width}px</p> */}
       </div>
 
@@ -90,3 +80,68 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Hook to get screen dimensions
+  
+  // const useScreenDimensions = () => {
+  //   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+    // useEffect(() => {
+    //   const updateDimensions = () => {
+    //     setDimensions({
+    //       width: window.innerWidth,
+    //       height: window.innerHeight,
+    //     });
+    //   };
+
+    //   updateDimensions();
+    //   window.addEventListener("resize", updateDimensions);
+
+    //   return () => window.removeEventListener("resize", updateDimensions);
+    // }, []);
+
+  //   return dimensions;
+  // };
+
+  // const { width, height } = useScreenDimensions();
+  // useEffect(() => {
+  //   importProducts();
+  // }, []);
+  // const [products, setProducts] = useState([]);
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const response = await fetch('/api/products');
+  //       const data = await response.json();
+  //       setProducts(data);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       console.error("Error fetching products:", error);
+  //       setLoading(false);
+  //     }
+  //   };
+  
+  //   fetchProducts();
+  // }, []);
+
+  
+
+  //   // Check if data is loading
+  //   if (loading) {
+  //     return <div>Loading...</div>;
+  //   }

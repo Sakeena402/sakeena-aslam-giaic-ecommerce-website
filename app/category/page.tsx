@@ -1,16 +1,47 @@
 
 'use client';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BreadCrumbs } from "../components/BreadCrumbs";
 import FilterBox from "../components/FilterBox";
 import CategoryList from "../components/CategoryList";
 import { products3 } from "@/data/products";
 import { FiSettings } from "react-icons/fi"; // Icon for the filter settings
+import useSWR from "swr";
 
 type Props = {};
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Page = (props: Props) => {
   const [isFilterVisible, setFilterVisible] = useState(false);
+  // const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState<string | null>(null); // Track errors
+
+  const { data: products, error } = useSWR("/api/products", fetcher, { dedupingInterval: 60000 });
+
+  if (!products) return <div>Loading...</div>;
+  if (error) return <div>Error fetching products.</div>;
+
+
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const response = await fetch('./api/products');
+  //       const data = await response.json();
+  //       setProducts(data);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       console.error("Error fetching products:", error);
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchProducts();
+  // }, []);
+
+  // if (loading) return <div>Loading...</div>; // Show a loading message while data is fetching
+  if (error) return <div>Error: {error}</div>; // Show error message if there was an issue
+
 
   return (
     <div className="w-full grid grid-cols-1 grid-rows-[auto] border-t border-gray-300">
@@ -47,7 +78,7 @@ const Page = (props: Props) => {
           </div>
 
           {/* Category List */}
-          <CategoryList products={products3} title="Casual" />
+          <CategoryList products={products} title="Casual" />
         </div>
       </div>
 
@@ -89,3 +120,6 @@ const Page = (props: Props) => {
 };
 
 export default Page;
+
+
+

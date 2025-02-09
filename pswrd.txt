@@ -1,0 +1,8 @@
+card: 4242424242424242
+authentication: 4000000000003220
+decline:4000000000000002
+test coupen: SAVE10
+expired coupen:SUMMER20
+routing 814317617
+no:2103333333
+routing:111000025

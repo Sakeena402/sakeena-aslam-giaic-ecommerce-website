@@ -1,0 +1,1110 @@
+{
+    "query": "*[_type == \"products\"]{ _id, name, slug, price, description, images[] { asset->{ _id, url, metadata { dimensions { width, height } } } }, reviews[]->{ _id, title, content }, ratings, quantity, category, discountPercent, new, colors, sizes, comments, tags }",
+    "result": [
+      {
+        "_id": "Lg1djurQdS9FkUvnuW1TbX",
+        "name": "Checkered Shirt",
+        "price": 178,
+        "description": "This men's plaid shirt combines timeless style and comfort, featuring a bold red, navy, and white checkered pattern. With a classic button-down collar and long sleeves, it offers a relaxed fit for easy wear. Made from soft, breathable fabric, this shirt is perfect for casual outings, weekends, or layering over a t-shirt. Its versatile design ensures it pairs well with jeans or chinos, making it a wardrobe essential for any season.",
+        "category": "shirt",
+        "discountPercent": 0,
+        "colors": [
+          "White",
+          "Black",
+          "Yellow",
+          "Blue"
+        ],
+        "sizes": [
+          "XL",
+          "L",
+          "XXL",
+          "M"
+        ]
+      },
+      {
+        "price": 120,
+        "description": "This stylish green bomber jacket offers a sleek and modern twist on a classic design, with a minimalist style perfect for layering over casual t-shirts or hoodies.",
+        "_id": "Lg1djurQdS9FkUvnumCv79"
+      },
+      {
+        "description": "Add a bold and artistic touch to your wardrobe with this unique graphic t-shirt featuring a vibrant abstract swirl design and motivational slogan.",
+        "_id": "Lg1djurQdS9FkUvnumCvHS",
+        "price": 30
+      },
+      {
+        "_id": "Lg1djurQdS9FkUvnumCxpU",
+        "price": 55,
+        "description": "These classic black jeans feature a straight-leg cut and durable denim, perfect for casual or semi-formal occasions with a sleek and sophisticated look."
+      },
+      {
+        "price": 50,
+        "description": "A versatile black pullover hoodie made from soft fabric with an adjustable drawstring and a spacious front pocket, perfect for casual outings.",
+        "_id": "Lg1djurQdS9FkUvnumCy6f"
+      },
+      {
+        "price": 150,
+        "description": "A premium black leather biker jacket with a sleek design, perfect for adding an edgy vibe to your casual look.",
+        "_id": "Lg1djurQdS9FkUvnumD35r"
+      },
+      {
+        "description": "A timeless navy blue polo shirt featuring a button-down collar and a breathable cotton fabric, perfect for both casual and semi-formal occasions.",
+        "_id": "Lg1djurQdS9FkUvnumD3Jb",
+        "price": 40
+      },
+      {
+        "_id": "Lg1djurQdS9FkUvnumD3XL",
+        "price": 60,
+        "description": "These classic black sneakers feature a clean and versatile design, ideal for both casual and active wear with a comfortable, cushioned sole."
+      },
+      {
+        "price": 35,
+        "reviews": [],
+        "ratings": [],
+        "category": "shorts",
+        "name": "Beige Chino Shorts",
+        "comments": [],
+        "images": [
+          {
+            "asset": {
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/86f5d2d6606d3ed48142a28fb9da39fa633fc56b-193x262.jpg",
+              "metadata": {
+                "dimensions": {
+                  "width": 193,
+                  "height": 262
+                }
+              },
+              "_id": "image-86f5d2d6606d3ed48142a28fb9da39fa633fc56b-193x262-jpg"
+            }
+          },
+          {
+            "asset": {
+              "_id": "image-4e2ed6a9eaa6e1413843e53f3113ccfd2104c301-278x296-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/4e2ed6a9eaa6e1413843e53f3113ccfd2104c301-278x296.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 278,
+                  "height": 296
+                }
+              }
+            }
+          }
+        ],
+        "description": "These beige chino shorts offer a relaxed and comfortable fit, ideal for summer or casual outings.",
+        "new": true,
+        "_id": "Lg1djurQdS9FkUvnumGoGN",
+        "colors": [
+          "Beige"
+        ],
+        "tags": [],
+        "slug": {
+          "current": "beige-chino-shorts",
+          "_type": "slug"
+        },
+        "discountPercent": 0
+      },
+      {
+        "_id": "Lg1djurQdS9FkUvnumGoQg",
+        "description": "A timeless navy blue polo shirt featuring a button-down collar and a breathable cotton fabric, perfect for both casual and semi-formal occasions.",
+        "comments": [],
+        "price": 40,
+        "category": "shirts",
+        "images": [
+          {
+            "asset": {
+              "metadata": {
+                "dimensions": {
+                  "width": 183,
+                  "height": 275
+                }
+              },
+              "_id": "image-bf90016048d092bb666f4ef422994de58797a8e8-183x275-jpg",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/bf90016048d092bb666f4ef422994de58797a8e8-183x275.jpg"
+            }
+          },
+          {
+            "asset": {
+              "_id": "image-01c1483f5c601ed25d89bc86e31c47b75e214f91-225x225-jpg",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/01c1483f5c601ed25d89bc86e31c47b75e214f91-225x225.jpg",
+              "metadata": {
+                "dimensions": {
+                  "width": 225,
+                  "height": 225
+                }
+              }
+            }
+          }
+        ],
+        "ratings": [],
+        "tags": [],
+        "reviews": [],
+        "colors": [
+          "Navy Blue"
+        ],
+        "name": "Navy Blue Polo Shirt",
+        "discountPercent": 0,
+        "slug": {
+          "_type": "slug",
+          "current": "navy-blue-polo-shirt"
+        },
+        "new": false
+      },
+      {
+        "sizes": [
+          "S",
+          "XXL",
+          "XL",
+          "L"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6EvC9",
+        "name": "Casual Green Bomber Jacket",
+        "price": 300,
+        "description": "This stylish green bomber jacket offers a sleek and modern twist on a classic design. Made from soft and comfortable fabric, it features snap buttons and ribbed cuffs, giving it a sporty yet refined look. The minimalist style makes it perfect for layering over casual t-shirts or hoodies. Whether you're out with friends or just lounging, this jacket provides a laid-back yet fashionable vibe. Its muted green color adds a subtle, earthy tone that pairs well with a variety of outfits, making it a versatile addition to your casual wardrobe.",
+        "category": "hoodie",
+        "discountPercent": 20,
+        "colors": [
+          "Blue",
+          "Red",
+          "Black",
+          "Yellow"
+        ]
+      },
+      {
+        "discountPercent": 10,
+        "colors": [
+          "Blue",
+          "Red",
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "XL",
+          "M",
+          "L"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6Evdt",
+        "name": "Classic White Pullover Hoodie",
+        "price": 150,
+        "description": "This white pullover hoodie offers a clean, minimalist look with its soft fabric and timeless design. The hoodie features a cozy, spacious fit, complete with an adjustable drawstring for a personalized fit and a large front pocket for added convenience. The bright white color is perfect for a fresh, casual style and pairs well with various bottoms like jeans, joggers, or shorts. Whether worn for lounging or as part of an everyday outfit, this hoodie provides comfort and versatility with a modern, relaxed flair.",
+        "category": "hoodie"
+      },
+      {
+        "discountPercent": 0,
+        "colors": [
+          "Green",
+          "Blue",
+          "Yellow",
+          "Red"
+        ],
+        "sizes": [
+          "L",
+          "XL",
+          "S",
+          "XXL"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6EwMy",
+        "name": "Gradient Graphic T-shirt",
+        "price": 145,
+        "description": "Add a bold and artistic touch to your wardrobe with this unique graphic t-shirt. Featuring an eye-catching abstract swirl design in vibrant colors, it exudes energy and individuality. The \"Just Walk Forward\" slogan adds a motivational element, making this tee perfect for those who love to express themselves.\n\nKey Features:\n\nHigh-quality fabric for ultimate comfort and durability\nModern, unisex design suitable for casual outings or statement looks\nRelaxed fit with a classic crew neckline\nUnique printed details for a one-of-a-kind style\nPair it with jeans, joggers, or shorts to create a standout look!",
+        "category": "tshirt"
+      },
+      {
+        "price": 170,
+        "description": "These classic black jeans offer a versatile and timeless addition to any wardrobe. Featuring a straight-leg cut, they provide a comfortable, flattering fit for various body types. Crafted from durable denim, these jeans are both stylish and practical, perfect for both casual outings and semi-formal occasions. The clean, dark black color adds a sleek and sophisticated touch, making them easy to pair with any top, from t-shirts to shirts or hoodies. With their classic design and premium fit, these black jeans are a must-have staple for any wardrobe.",
+        "category": "jeans",
+        "discountPercent": 16,
+        "colors": [
+          "Green",
+          "Blue",
+          "Yellow",
+          "Red"
+        ],
+        "sizes": [
+          "XXL",
+          "XL",
+          "L",
+          "S"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6Ewhm",
+        "name": "Classic Black Straight-Leg Jeans"
+      },
+      {
+        "price": 128,
+        "description": "This versatile and stylish black hoodie is a must-have in any wardrobe. Featuring a comfortable, soft fabric and a relaxed fit, it is perfect for casual outings or layering for colder weather. The hoodie includes an adjustable drawstring and a spacious front pocket, making it both practical and fashionable. The black color adds a timeless touch, making it easy to pair with jeans, shorts, or joggers for an effortlessly cool look.",
+        "category": "hoodie",
+        "discountPercent": 0,
+        "colors": [
+          "Black",
+          "Red",
+          "Green",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XXL",
+          "XL",
+          "L"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6Exw4",
+        "name": "Classic Black Pullover Hoodie"
+      },
+      {
+        "name": "Gray Slim-Fit Jogger Pants",
+        "price": 170,
+        "description": "These comfortable gray jogger pants are perfect for relaxed days or light workouts. Featuring a slim fit and cuffed ankles, they offer a modern and sporty look. The elastic waistband with an adjustable drawstring ensures a snug fit, while the soft fabric provides comfort for everyday wear. Whether you're lounging at home or heading out for a casual outing, these joggers are versatile enough to pair with a variety of tops. The neutral gray color adds a sleek, minimalist touch to your casual wardrobe.",
+        "category": "jeans",
+        "discountPercent": 15,
+        "colors": [
+          "Black",
+          "Red",
+          "Green",
+          "White"
+        ],
+        "sizes": [
+          "L",
+          "M",
+          "XXL",
+          "XL"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6EyKL"
+      },
+      {
+        "discountPercent": 0,
+        "colors": [
+          "White",
+          "Blue",
+          "Black",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "XL",
+          "XXL",
+          "M"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6Eyic",
+        "name": "COURAGE GRAPHIC T-SHIRT",
+        "price": 145,
+        "description": "This product is the Courage Graphic T-Shirt, a bold and expressive tee featuring a standout graphic design. Made with soft, breathable fabric, this t-shirt combines comfort with statement style. The eye-catching \"Courage\" graphic on the front makes it a perfect addition to any casual wardrobe. Ideal for those who want to showcase their bold personality, this t-shirt pairs easily with jeans, shorts, or casual pants for an effortlessly cool look.",
+        "category": "tshirt"
+      },
+      {
+        "category": "tshirt",
+        "discountPercent": 40,
+        "colors": [
+          "Red",
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "L",
+          "XL",
+          "M"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6EzDp",
+        "name": "Sleeve Stripe T-Shirt",
+        "price": 130,
+        "description": "This product is a vibrant orange and black striped t-shirt with a sporty design. The shirt features vertical pinstripes in black on an orange base, complemented by contrasting black raglan sleeves for a casual, athletic-inspired look. Ideal for adding a bold touch to your casual wardrobe, this tee combines comfort and style, perfect for daily wear or sporting events. The soft fabric ensures a comfortable fit, while the unique design makes it a standout piece for any outfit."
+      },
+      {
+        "category": "shirt",
+        "discountPercent": 50,
+        "colors": [
+          "Yellow",
+          "Black",
+          "White",
+          "Red"
+        ],
+        "sizes": [
+          "M",
+          "XL",
+          "S",
+          "L"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6Ezj2",
+        "name": "Vertical Striped Shirt",
+        "price": 229,
+        "description": "This product is a stylish vertical striped shirt, featuring alternating green and darker green stripes for a sophisticated, yet casual look. The shirt has a simple button-down design with a modern band collar, offering a clean and sharp appearance. Its long sleeves and breathable fabric make it an ideal choice for various occasions, from a laid-back day out to semi-casual gatherings. The subtle stripe pattern adds a unique touch while maintaining versatility, allowing it to pair well with both jeans and chinos."
+      },
+      {
+        "name": "Black Striped T-Shirt",
+        "price": 120,
+        "description": "Elevate your casual style with this sporty and timeless raglan t-shirt. Featuring a crisp white base adorned with vertical pinstripes, it blends a retro vibe with modern appeal. The contrasting black raglan sleeves add a bold, athletic touch, making it a versatile piece for any wardrobe.\n\nKey Features:\n\nSoft and breathable fabric for all-day comfort\nClassic pinstripe design for a clean, stylish look\nContrasting raglan sleeves for a sporty edge\nRegular fit with a crew neckline\nPerfect for casual outings or active days, pair this tee with your favorite jeans or joggers for effortless",
+        "category": "tshirt",
+        "discountPercent": 0,
+        "colors": [
+          "Blue",
+          "White",
+          "Black",
+          "Red"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "S",
+          "XXL"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6F1SX"
+      },
+      {
+        "_id": "Pneo15i0MtwqZxDLN6F2Bc",
+        "name": "Beige Slim-Fit Jogger Pants",
+        "price": 269,
+        "description": "These beige jogger pants combine comfort and style with their relaxed yet modern fit. Designed with an elastic waistband and cuffed ankles, they provide a sleek, slim silhouette while offering a casual, sporty look. The soft fabric ensures all-day comfort, making them perfect for lounging or running errands. The neutral beige color adds versatility, allowing for easy pairing with a variety of tops. Whether you're pairing them with a t-shirt or a hoodie, these joggers are a must-have staple for a stylish, laid-back outfit.",
+        "category": "jeans",
+        "discountPercent": 10,
+        "colors": [
+          "White",
+          "Red",
+          "Yellow",
+          "Blue"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "S",
+          "XXL"
+        ]
+      },
+      {
+        "category": "jeans",
+        "discountPercent": 0,
+        "colors": [
+          "White",
+          "Red",
+          "Yellow",
+          "Blue"
+        ],
+        "sizes": [
+          "S",
+          "L",
+          "XXL",
+          "M"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6F2nl",
+        "name": "Skinny Fit Jeans",
+        "price": 240,
+        "description": "Upgrade your everyday wardrobe with these classic straight-fit denim jeans. Designed for comfort and durability, these jeans feature a timeless medium-wash finish with subtle distressed details, making them perfect for any casual occasion.\n\nKey Features:\n\nPremium-quality denim for a comfortable fit\nStraight-leg design for a versatile, timeless look\nSubtle fading and whiskering for added style\nFive-pocket construction for practicality\nPerfect for pairing with t-shirts, polos, or casual shirts\nThese jeans are a wardrobe staple, offering style and versatility for any outfit!"
+      },
+      {
+        "discountPercent": 0,
+        "colors": [
+          "Red",
+          "Blue",
+          "Green",
+          "Yellow"
+        ],
+        "sizes": [
+          "XL",
+          "M",
+          "XXL",
+          "L"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6F3dm",
+        "name": "Black Athletic Jogger Pants with Side Stripes",
+        "price": 180,
+        "description": "These sporty black jogger pants offer a perfect blend of comfort and style. Featuring a relaxed fit with an elastic waistband and adjustable drawstring, they are ideal for both casual wear and light athletic activities. The distinctive white side stripes add a stylish, modern touch that enhances their sporty appeal. With deep pockets for convenience, these pants are versatile enough to pair with a variety of tops, from t-shirts to hoodies. Comfortable and easy to wear, these jogger pants are a great choice for a laid-back, active look.",
+        "category": "jeans"
+      },
+      {
+        "sizes": [
+          "L",
+          "XXL",
+          "S",
+          "M"
+        ],
+        "_id": "Pneo15i0MtwqZxDLN6F3v7",
+        "name": "Classic Polo Shirt ",
+        "price": 180,
+        "description": "Classic Polo Shirt\n\nUpgrade your wardrobe with this timeless classic polo shirt, perfect for any occasion. Crafted from premium-quality fabric, it offers a soft, breathable, and comfortable fit that lasts all day. Featuring a stylish collar, button placket, and short sleeves, this versatile polo blends elegance with a casual touch.\n\nKey features:\n\nMade with durable and lightweight material\nAvailable in a variety of colors and sizes\nEasy to pair with jeans, chinos, or shorts for a polished look\nIdeal for work, casual outings, or weekend wear\nStay effortlessly stylish with this must-have polo shirt!",
+        "category": "tshirt",
+        "discountPercent": 0,
+        "colors": [
+          "White",
+          "Black",
+          "Green",
+          "Yellow"
+        ]
+      },
+      {
+        "_id": "Pneo15i0MtwqZxDLNMbCOy",
+        "price": 45,
+        "description": "This white pullover hoodie offers a clean, minimalist look with a spacious fit and adjustable drawstring for a personalized touch."
+      },
+      {
+        "description": "This sleek black button-down shirt offers a tailored fit and timeless style, perfect for both professional and casual settings.",
+        "_id": "Pneo15i0MtwqZxDLNMbHR4",
+        "price": 60
+      },
+      {
+        "description": "A classic light blue denim jacket featuring a timeless design with a relaxed fit, perfect for layering over any outfit.",
+        "_id": "Pneo15i0MtwqZxDLNMbHpL",
+        "price": 70
+      },
+      {
+        "description": "These camo print cargo pants feature a comfortable fit with plenty of pockets for added functionality, ideal for casual outings or outdoor activities.",
+        "_id": "Pneo15i0MtwqZxDLNMbHzk",
+        "price": 50
+      },
+      {
+        "_id": "Pneo15i0MtwqZxDLNMbIDc",
+        "price": 35,
+        "description": "These beige chino shorts offer a relaxed and comfortable fit, ideal for summer or casual outings."
+      },
+      {
+        "slug": {
+          "_type": "slug",
+          "current": "gradient-graphic-t-shirt"
+        },
+        "ratings": [],
+        "price": 30,
+        "description": "Add a bold and artistic touch to your wardrobe with this unique graphic t-shirt featuring a vibrant abstract swirl design and motivational slogan.",
+        "_id": "Pneo15i0MtwqZxDLNMejGF",
+        "tags": [],
+        "name": "Gradient Graphic T-Shirt",
+        "images": [
+          {
+            "asset": {
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/aee16bf0eb630ce9a22be39441166f97ebf2892a-295x298.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              },
+              "_id": "image-aee16bf0eb630ce9a22be39441166f97ebf2892a-295x298-png"
+            }
+          },
+          {
+            "asset": {
+              "_id": "image-ecff952e7a1d88663639d45021fd0d0e05e08962-295x298-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/ecff952e7a1d88663639d45021fd0d0e05e08962-295x298.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              }
+            }
+          }
+        ],
+        "reviews": [],
+        "new": true,
+        "colors": [
+          "Multicolor"
+        ],
+        "discountPercent": 0,
+        "comments": [],
+        "category": "t-shirts"
+      },
+      {
+        "description": "This sleek black button-down shirt offers a tailored fit and timeless style, perfect for both professional and casual settings.",
+        "slug": {
+          "_type": "slug",
+          "current": "classic-black-long-sleeve-button-down-shirt"
+        },
+        "name": "Classic Black Long Sleeve Button-Down Shirt",
+        "colors": [
+          "Black"
+        ],
+        "reviews": [],
+        "comments": [],
+        "discountPercent": 0,
+        "category": "shirts",
+        "ratings": [],
+        "_id": "Pneo15i0MtwqZxDLNMejb3",
+        "tags": [],
+        "images": [
+          {
+            "asset": {
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/a92393775ac68636c6e4480e553650d787a2c290-295x298.png",
+              "metadata": {
+                "dimensions": {
+                  "height": 298,
+                  "width": 295
+                }
+              },
+              "_id": "image-a92393775ac68636c6e4480e553650d787a2c290-295x298-png"
+            }
+          },
+          {
+            "asset": {
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              },
+              "_id": "image-18be6c1b158aacd1475323d7544d2bf5640a5b4d-295x298-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/18be6c1b158aacd1475323d7544d2bf5640a5b4d-295x298.png"
+            }
+          }
+        ],
+        "price": 60,
+        "new": false
+      },
+      {
+        "category": "hoodies",
+        "discountPercent": 0,
+        "tags": [],
+        "reviews": [],
+        "description": "A versatile black pullover hoodie made from soft fabric with an adjustable drawstring and a spacious front pocket, perfect for casual outings.",
+        "new": true,
+        "ratings": [],
+        "colors": [
+          "Black"
+        ],
+        "name": "Classic Black Pullover Hoodie",
+        "_id": "Pneo15i0MtwqZxDLNMejvr",
+        "images": [
+          {
+            "asset": {
+              "_id": "image-68b4debeb5624646a50c99588354ca14bc43f6c0-295x298-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/68b4debeb5624646a50c99588354ca14bc43f6c0-295x298.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              }
+            }
+          },
+          {
+            "asset": {
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/ac107f97dc6b7b91782ef1e9221748718143f27b-295x298.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              },
+              "_id": "image-ac107f97dc6b7b91782ef1e9221748718143f27b-295x298-png"
+            }
+          }
+        ],
+        "price": 50,
+        "comments": [],
+        "slug": {
+          "current": "classic-black-pullover-hoodie",
+          "_type": "slug"
+        }
+      },
+      {
+        "images": [
+          {
+            "asset": {
+              "metadata": {
+                "dimensions": {
+                  "width": 691,
+                  "height": 691
+                }
+              },
+              "_id": "image-24582a9c6e416670128b4e229cd5d3bba43b3ef0-691x691-jpg",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/24582a9c6e416670128b4e229cd5d3bba43b3ef0-691x691.jpg"
+            }
+          },
+          {
+            "asset": {
+              "metadata": {
+                "dimensions": {
+                  "width": 608,
+                  "height": 608
+                }
+              },
+              "_id": "image-293a617e81e1b9177d3a006ac899a05ab160d02f-608x608-jpg",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/293a617e81e1b9177d3a006ac899a05ab160d02f-608x608.jpg"
+            }
+          }
+        ],
+        "category": "t-shirts",
+        "ratings": [],
+        "comments": [],
+        "_id": "Pneo15i0MtwqZxDLNMekGf",
+        "name": "Courage Graphic T-Shirt",
+        "reviews": [],
+        "colors": [
+          "Multicolor"
+        ],
+        "price": 35,
+        "slug": {
+          "current": "courage-graphic-t-shirt",
+          "_type": "slug"
+        },
+        "description": "A bold and expressive tee featuring a standout graphic design, combining comfort with statement style for those who want to show their courage.",
+        "tags": [],
+        "new": true,
+        "discountPercent": 0
+      },
+      {
+        "description": "A classic light blue denim jacket featuring a timeless design with a relaxed fit, perfect for layering over any outfit.",
+        "tags": [],
+        "new": false,
+        "images": [
+          {
+            "asset": {
+              "metadata": {
+                "dimensions": {
+                  "height": 225,
+                  "width": 225
+                }
+              },
+              "_id": "image-ef3c04fe810eef4d247dbd7dca0d7d8eaaa4cca1-225x225-jpg",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/ef3c04fe810eef4d247dbd7dca0d7d8eaaa4cca1-225x225.jpg"
+            }
+          },
+          {
+            "asset": {
+              "metadata": {
+                "dimensions": {
+                  "width": 800,
+                  "height": 533
+                }
+              },
+              "_id": "image-0bff1837f17692871795719b1a40c8ac565691fd-800x533-webp",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/0bff1837f17692871795719b1a40c8ac565691fd-800x533.webp"
+            }
+          }
+        ],
+        "_id": "Pneo15i0MtwqZxDLNMekUX",
+        "category": "jackets",
+        "discountPercent": 0,
+        "colors": [
+          "Blue"
+        ],
+        "reviews": [],
+        "price": 70,
+        "name": "Light Blue Denim Jacket",
+        "slug": {
+          "current": "light-blue-denim-jacket",
+          "_type": "slug"
+        },
+        "ratings": [],
+        "comments": []
+      },
+      {
+        "comments": [],
+        "category": "pants",
+        "_id": "Pneo15i0MtwqZxDLNMekiP",
+        "name": "Camo Print Cargo Pants",
+        "reviews": [],
+        "description": "These camo print cargo pants feature a comfortable fit with plenty of pockets for added functionality, ideal for casual outings or outdoor activities.",
+        "discountPercent": 0,
+        "price": 50,
+        "new": true,
+        "ratings": [],
+        "slug": {
+          "current": "camo-print-cargo-pants",
+          "_type": "slug"
+        },
+        "images": [
+          {
+            "asset": {
+              "_id": "image-b9f146dbc55628db1c0e8dd68f84d43e37b75359-1000x667-jpg",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/b9f146dbc55628db1c0e8dd68f84d43e37b75359-1000x667.jpg",
+              "metadata": {
+                "dimensions": {
+                  "height": 667,
+                  "width": 1000
+                }
+              }
+            }
+          },
+          {
+            "asset": {
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/95e658b3de384ed4abb74c19124713c5ecadb5b9-275x183.jpg",
+              "metadata": {
+                "dimensions": {
+                  "height": 183,
+                  "width": 275
+                }
+              },
+              "_id": "image-95e658b3de384ed4abb74c19124713c5ecadb5b9-275x183-jpg"
+            }
+          }
+        ],
+        "tags": [],
+        "colors": [
+          "Camouflage"
+        ]
+      },
+      {
+        "ratings": [],
+        "comments": [],
+        "colors": [
+          "Black"
+        ],
+        "discountPercent": 0,
+        "_id": "Pneo15i0MtwqZxDLNMel6g",
+        "reviews": [],
+        "tags": [],
+        "slug": {
+          "current": "black-leather-biker-jacket",
+          "_type": "slug"
+        },
+        "category": "jackets",
+        "images": [
+          {
+            "asset": {
+              "_id": "image-caa357dd356b3e497362f2189587b0e58599b6fb-400x267-webp",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/caa357dd356b3e497362f2189587b0e58599b6fb-400x267.webp",
+              "metadata": {
+                "dimensions": {
+                  "width": 400,
+                  "height": 267
+                }
+              }
+            }
+          },
+          {
+            "asset": {
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/c731f471abfee174b70b45d10a1bd781484072e5-800x534.webp",
+              "metadata": {
+                "dimensions": {
+                  "height": 534,
+                  "width": 800
+                }
+              },
+              "_id": "image-c731f471abfee174b70b45d10a1bd781484072e5-800x534-webp"
+            }
+          }
+        ],
+        "price": 150,
+        "description": "A premium black leather biker jacket with a sleek design, perfect for adding an edgy vibe to your casual look.",
+        "name": "Black Leather Biker Jacket",
+        "new": false
+      },
+      {
+        "images": [
+          {
+            "asset": {
+              "_id": "image-b2264d466c3c96f8ae3f1192a2f73ac313221576-183x275-jpg",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/b2264d466c3c96f8ae3f1192a2f73ac313221576-183x275.jpg",
+              "metadata": {
+                "dimensions": {
+                  "width": 183,
+                  "height": 275
+                }
+              }
+            }
+          },
+          {
+            "asset": {
+              "_id": "image-a93f8ab0d00d857ce42c057d8835e419d68a87eb-193x262-jpg",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/a93f8ab0d00d857ce42c057d8835e419d68a87eb-193x262.jpg",
+              "metadata": {
+                "dimensions": {
+                  "height": 262,
+                  "width": 193
+                }
+              }
+            }
+          }
+        ],
+        "tags": [],
+        "discountPercent": 0,
+        "description": "These classic black sneakers feature a clean and versatile design, ideal for both casual and active wear with a comfortable, cushioned sole.",
+        "category": "shoes",
+        "slug": {
+          "_type": "slug",
+          "current": "black-classic-sneakers"
+        },
+        "reviews": [],
+        "new": true,
+        "_id": "Pneo15i0MtwqZxDLNMelO1",
+        "ratings": [],
+        "name": "Black Classic Sneakers",
+        "colors": [
+          "Black"
+        ],
+        "price": 60,
+        "comments": []
+      },
+      {
+        "category": "shirt",
+        "discountPercent": 0,
+        "colors": [
+          "Yellow",
+          "Red",
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "_id": "gisOx3lh9g6lblH2CwYNlV",
+        "name": "Classic Black Long Sleeve Button-Down Shirt",
+        "price": 190,
+        "description": "This sleek black button-down shirt is the epitome of style and versatility. Designed with a tailored fit, it provides a sharp, refined look that’s perfect for both professional and casual settings. The long sleeves and crisp collar offer a classic silhouette, while the lightweight fabric ensures comfort throughout the day. Whether worn at the office, for a dinner out, or dressed down with jeans, this black shirt adds a polished touch to any outfit. A must-have wardrobe staple for those who appreciate clean lines and timeless style."
+      },
+      {
+        "sizes": [
+          "L",
+          "S",
+          "XL",
+          "M"
+        ],
+        "_id": "gisOx3lh9g6lblH2CwYPtP",
+        "name": "LOOSE FIT BERMUDA SHORTS",
+        "price": 78,
+        "description": "These Loose Fit Bermuda Shorts are designed for comfort and laid-back style. Made from lightweight, breathable fabric, these shorts offer a relaxed fit that hits just above the knee. The versatile design features a classic waistband with belt loops, side pockets, and a simple yet stylish look perfect for casual outings or beach days. Pair them with your favorite t-shirt or tank for a cool and comfortable summer outfit.",
+        "category": "short",
+        "discountPercent": 20,
+        "colors": [
+          "Red",
+          "White",
+          "Black",
+          "Blue"
+        ]
+      },
+      {
+        "_id": "gisOx3lh9g6lblH2DHUJaf",
+        "price": 40,
+        "description": "These comfortable gray jogger pants feature a slim fit and cuffed ankles, perfect for a modern, sporty look with a soft, relaxed fit."
+      },
+      {
+        "price": 35,
+        "description": "A bold and expressive tee featuring a standout graphic design, combining comfort with statement style for those who want to show their courage.",
+        "_id": "gisOx3lh9g6lblH2DHUJoJ"
+      },
+      {
+        "_id": "gisOx3lh9g6lblH2DHUKB3",
+        "price": 45,
+        "description": "This vibrant red sweatshirt features a bold graphic design that adds personality to your casual look while keeping you warm and comfy."
+      },
+      {
+        "_id": "gisOx3lh9g6lblH2DHYoHz",
+        "category": "jackets",
+        "images": [
+          {
+            "asset": {
+              "metadata": {
+                "dimensions": {
+                  "width": 400,
+                  "height": 600
+                }
+              },
+              "_id": "image-9c2f4b7f7fe3ebf1ca01d87dcc3af71afaebe4d8-400x600-webp",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/9c2f4b7f7fe3ebf1ca01d87dcc3af71afaebe4d8-400x600.webp"
+            }
+          },
+          {
+            "asset": {
+              "_id": "image-ce0ec4edfda292efafd1002cfad36ebfe7b96c96-295x298-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/ce0ec4edfda292efafd1002cfad36ebfe7b96c96-295x298.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              }
+            }
+          }
+        ],
+        "new": true,
+        "reviews": [],
+        "colors": [
+          "Green"
+        ],
+        "discountPercent": 0,
+        "comments": [],
+        "price": 120,
+        "name": "Casual Green Bomber Jacket",
+        "slug": {
+          "current": "casual-green-bomber-jacket",
+          "_type": "slug"
+        },
+        "tags": [],
+        "description": "This stylish green bomber jacket offers a sleek and modern twist on a classic design, with a minimalist style perfect for layering over casual t-shirts or hoodies.",
+        "ratings": []
+      },
+      {
+        "tags": [],
+        "slug": {
+          "current": "classic-white-pullover-hoodie",
+          "_type": "slug"
+        },
+        "price": 45,
+        "colors": [
+          "White"
+        ],
+        "new": true,
+        "comments": [],
+        "discountPercent": 0,
+        "category": "hoodies",
+        "ratings": [],
+        "description": "This white pullover hoodie offers a clean, minimalist look with a spacious fit and adjustable drawstring for a personalized touch.",
+        "reviews": [],
+        "_id": "gisOx3lh9g6lblH2DHYoVd",
+        "name": "Classic White Pullover Hoodie",
+        "images": [
+          {
+            "asset": {
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              },
+              "_id": "image-fb62308b5fa5f6c0d5af2b40e5be28065c42454d-295x298-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/fb62308b5fa5f6c0d5af2b40e5be28065c42454d-295x298.png"
+            }
+          },
+          {
+            "asset": {
+              "_id": "image-07dc8647a64f4a93a9d1fbb41e0a81fc940b903d-295x298-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/07dc8647a64f4a93a9d1fbb41e0a81fc940b903d-295x298.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "category": "jeans",
+        "_id": "gisOx3lh9g6lblH2DHYosN",
+        "ratings": [],
+        "description": "These classic black jeans feature a straight-leg cut and durable denim, perfect for casual or semi-formal occasions with a sleek and sophisticated look.",
+        "price": 55,
+        "comments": [],
+        "tags": [],
+        "reviews": [],
+        "name": "Classic Black Straight-Leg Jeans",
+        "colors": [
+          "Black"
+        ],
+        "slug": {
+          "_type": "slug",
+          "current": "classic-black-straight-leg-jeans"
+        },
+        "new": false,
+        "discountPercent": 0,
+        "images": [
+          {
+            "asset": {
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              },
+              "_id": "image-55e845afa21185a2443f7067fa2911ccd4c68e58-295x298-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/55e845afa21185a2443f7067fa2911ccd4c68e58-295x298.png"
+            }
+          },
+          {
+            "asset": {
+              "_id": "image-b47f45391dc6913311e87f6afa3522e2468e65ed-295x298-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/b47f45391dc6913311e87f6afa3522e2468e65ed-295x298.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "comments": [],
+        "colors": [
+          "Gray"
+        ],
+        "images": [
+          {
+            "asset": {
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/701cf9bdf7e58564aae72eb5b76896f02a1d4115-295x298.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 295,
+                  "height": 298
+                }
+              },
+              "_id": "image-701cf9bdf7e58564aae72eb5b76896f02a1d4115-295x298-png"
+            }
+          },
+          {
+            "asset": {
+              "_id": "image-1f004d68d4ed519800c009854c1dc33e8168d161-1000x1250-jpg",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/1f004d68d4ed519800c009854c1dc33e8168d161-1000x1250.jpg",
+              "metadata": {
+                "dimensions": {
+                  "height": 1250,
+                  "width": 1000
+                }
+              }
+            }
+          }
+        ],
+        "reviews": [],
+        "ratings": [],
+        "category": "pants",
+        "discountPercent": 0,
+        "new": false,
+        "description": "These comfortable gray jogger pants feature a slim fit and cuffed ankles, perfect for a modern, sporty look with a soft, relaxed fit.",
+        "price": 40,
+        "slug": {
+          "current": "gray-slim-fit-jogger-pants",
+          "_type": "slug"
+        },
+        "_id": "gisOx3lh9g6lblH2DHYpAZ",
+        "name": "Gray Slim-Fit Jogger Pants"
+      },
+      {
+        "reviews": [],
+        "_id": "gisOx3lh9g6lblH2DHYq7h",
+        "name": "Red Graphic Sweatshirt",
+        "slug": {
+          "current": "red-graphic-sweatshirt",
+          "_type": "slug"
+        },
+        "colors": [
+          "Red"
+        ],
+        "category": "sweatshirts",
+        "ratings": [],
+        "description": "This vibrant red sweatshirt features a bold graphic design that adds personality to your casual look while keeping you warm and comfy.",
+        "new": true,
+        "comments": [],
+        "tags": [],
+        "price": 45,
+        "images": [
+          {
+            "asset": {
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/203059fa2f859a6a342344fbf87c198dcab6babd-612x471.jpg",
+              "metadata": {
+                "dimensions": {
+                  "width": 612,
+                  "height": 471
+                }
+              },
+              "_id": "image-203059fa2f859a6a342344fbf87c198dcab6babd-612x471-jpg"
+            }
+          },
+          {
+            "asset": {
+              "_id": "image-cd17037622e7def9689d8db2ec08a72f96e6556a-1200x1812-png",
+              "url": "https://cdn.sanity.io/images/ak03t5hk/production/cd17037622e7def9689d8db2ec08a72f96e6556a-1200x1812.png",
+              "metadata": {
+                "dimensions": {
+                  "width": 1200,
+                  "height": 1812
+                }
+              }
+            }
+          }
+        ],
+        "discountPercent": 0
+      }
+    ],
+    "ms": 28
+  }

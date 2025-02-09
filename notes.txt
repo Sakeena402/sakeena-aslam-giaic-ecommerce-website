@@ -1,3 +1,156 @@
+
+
+export default ProductCard;
+import React from "react";
+import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
+
+interface ProductCardProps {
+  id: string; // Use string for Sanity document IDs
+  name: string;
+  images: {
+    asset: {
+      url: string;
+    };
+  }[];
+  ratings: number;
+  reviews: {
+    title: string;
+    content: string;
+  }[];
+  price: number;
+  description?: string;
+  discountPercent?: number;
+  category?: string;
+  isNew?: boolean;
+  quantity?: number;
+  onAddToCart: () => void;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({
+  id,
+  name,
+  images,
+  ratings,
+  reviews,
+  price,
+  description,
+  discountPercent,
+  category,
+  isNew,
+  quantity,
+  onAddToCart,
+}) => {
+  // Calculate discounted price if applicable
+  const discountedPrice = discountPercent
+    ? (price - (price * discountPercent) / 100).toFixed(2)
+    : price.toFixed(2);
+
+  return (
+    <div className="max-w-xs bg-white p-4 shadow rounded-lg">
+      <div className="relative">
+        {isNew && (
+          <span className="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold py-1 px-2 rounded">
+            New
+          </span>
+        )}
+       <img
+  src={images && images.length > 0 ? images[0].asset.url : "/placeholder.png"}
+  alt={name}
+  className="w-full h-56 object-contain rounded-md"
+/>
+ 
+      </div>
+      <div className="mt-4">
+        <h3 className="text-lg font-medium text-gray-800">{name}</h3>
+        {category && (
+          <p className="text-sm text-gray-500 mt-1 capitalize">{category}</p>
+        )}
+        <div className="flex items-center mt-2">
+          <div className="flex text-yellow-500">
+            {Array.from({ length: Math.floor(ratings) }).map((_, i) => (
+              <span key={i}>&#9733;</span>
+            ))}
+            {ratings % 1 !== 0 && <span>&#9734;</span>}
+          </div>
+          <span className="text-sm text-gray-600 ml-2">
+  {(reviews && reviews.length) || 0} reviews
+</span>
+
+        </div>
+        {description && (
+          <div className="mt-3">
+            <p className="text-sm text-gray-600">{description}</p>
+          </div>
+        )}
+        <div className="mt-3 flex items-center justify-between">
+          <div>
+            <span className="text-lg font-semibold text-gray-800">
+              ${discountedPrice}
+            </span>
+            {discountPercent && (
+              <span className="text-sm line-through text-gray-500 ml-2">
+                ${price.toFixed(2)}
+              </span>
+            )}
+            {discountPercent && (
+              <span className="ml-2 text-sm font-semibold text-red-500">
+                -{discountPercent}%
+              </span>
+            )}
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={onAddToCart}
+              className="text-green-600 hover:text-green-800"
+            >
+              <AiOutlineShoppingCart size={20} />
+            </button>
+            <button className="text-red-600 hover:text-red-800">
+              <AiOutlineHeart size={20} />
+            </button>
+          </div>
+        </div>
+        {quantity !== undefined && (
+          <p className="mt-2 text-sm text-gray-600">
+            {quantity > 0 ? `${quantity} in stock` : "Out of stock"}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1000 py break horha hy
 
 

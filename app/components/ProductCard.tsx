@@ -1,154 +1,129 @@
-// import React from 'react';
-// import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai';
 
-// interface ProductCardProps {
-//   image: string;
-//   title: string;
-//   rating: number;
-//   reviews: number;
-//   price: number;
-//   originalPrice?: number;
-//   discount?: number;
-//   onAddToCart: () => void;
-// }
-
-// const ProductCard: React.FC<ProductCardProps> = ({
-//   image,
-//   title,
-//   rating,
-//   reviews,
-//   price,
-//   originalPrice,
-//   discount,
-//   onAddToCart,
-// }) => {
-//   return (
-//     <div className="max-w-xs bg-white rounded-lg p-4">
-//       <img
-//         src={image}
-//         alt={title}
-//         className="w-full h-56 object-contain rounded-md"
-//       />
-//       <div className="mt-4">
-//         <h3 className="text-lg font-medium text-gray-800">{title}</h3>
-//         <div className="flex items-center mt-2">
-//           <div className="flex text-yellow-500">
-//             {Array.from({ length: Math.floor(rating) }).map((_, i) => (
-//               <span key={i}>&#9733;</span>
-//             ))}
-//             {rating % 1 !== 0 && <span>&#9734;</span>}
-//           </div>
-//           <span className="text-sm text-gray-600 ml-2">{reviews} reviews</span>
-//         </div>
-//         <div className="mt-3 flex items-center justify-between">
-//           <div>
-//             <span className="text-lg font-semibold text-gray-800">${price}</span>
-//             {originalPrice && (
-//               <span className="text-sm line-through text-gray-500 ml-2">
-//                 ${originalPrice}
-//               </span>
-//             )}
-//             {discount && (
-//               <span className="ml-2 text-sm font-semibold text-red-500">
-//                 -{discount}%
-//               </span>
-//             )}
-//           </div>
-//           <div className="flex gap-2">
-//             <button
-//               onClick={() =>
-//                 onAddToCart({ id: product.id, title: product.title, price: product.price, quantity: 1 })
-//               }
-//               className="text-green-600 hover:text-green-800"
-//             >
-//               <AiOutlineShoppingCart size={20} />
-//             </button>
-//             <button className="text-red-600 hover:text-red-800">
-//               <AiOutlineHeart size={20} />
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductCard;
-
-
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 
 interface ProductCardProps {
-
-  id?: number | null;
-  image: string;
-  title: string;
-  rating: number;
-  reviews: number;
+  _id: string; // Use string for Sanity document IDs
+  name: string;
+  images: {
+    asset: {
+      url: string; // Fixed URL type for the image
+    };
+  }[];
+  ratings: number[]; // Array of ratings
+  reviews: {
+    title: string;
+    content: string;
+  }[];
   price: number;
-  originalPrice?: number | null | undefined;
-  discount?: number | null;
+  description?: string;
+  discountPercent?: number;
   category?: string;
-  quantity?: number | null;
-  onAddToCart: () => void; // Add handler type
+  isNew?: boolean;
+  quantity?: number;
+  onAddToCart?: () => void;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
-  image,
-  title,
-  rating,
+  name,
+  images,
+  ratings,
   reviews,
   price,
-  originalPrice,
-  discount,
+  discountPercent,
+  category,
+  quantity,
   onAddToCart,
 }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate loading for demonstration
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const discountedPrice =
+    discountPercent && discountPercent > 0
+      ? (price - (price * discountPercent) / 100).toFixed(2)
+      : price.toFixed(2);
+
+  const averageRating =
+    ratings.length > 0
+      ? (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1)
+      : 0;
+
+  if (isLoading) {
+    return (
+      <div className="max-w-xs bg-white rounded-lg p-4 animate-pulse">
+        <div className="w-full h-56 bg-gray-200 rounded-md"></div>
+        <div className="mt-4 space-y-2">
+          <div className="h-4 bg-gray-200 rounded"></div>
+          <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="max-w-xs bg-white rounded-lg p-4">
+    <div className="max-w-xs bg-white p-4 rounded-lg shadow-md">
       <img
-        src={image}
-        alt={title}
-        className="w-full h-56 object-contain rounded-md"
+        src={images && images.length > 0 ? images[0].asset.url : "/fallback.jpg"}
+        alt={name}
+        className="w-full h-56 object-contain rounded-lg"
       />
       <div className="mt-4">
-        <h3 className="text-lg font-medium text-gray-800">{title}</h3>
+        <h3 className="text-lg font-medium text-gray-800">{name}</h3>
+        {category && (
+          <p className="text-sm text-gray-500 mt-1 capitalize">{category}</p>
+        )}
         <div className="flex items-center mt-2">
           <div className="flex text-yellow-500">
-            {Array.from({ length: Math.floor(rating) }).map((_, i) => (
-              <span key={i}>&#9733;</span>
-            ))}
-            {rating % 1 !== 0 && <span>&#9734;</span>}
-          </div>
-          <span className="text-sm text-gray-600 ml-2">{reviews} reviews</span>
-        </div>
-        <div className="mt-3 flex items-center justify-between">
-          <div>
-            <span className="text-lg font-semibold text-gray-800">${price}</span>
-            {originalPrice && (
-              <span className="text-sm line-through text-gray-500 ml-2">
-                ${originalPrice}
-              </span>
+            {Array.from({ length: Math.floor(Number(averageRating)) }).map(
+              (_, i) => (
+                <span key={i}>&#9733;</span>
+              )
             )}
-            {discount && (
-              <span className="ml-2 text-sm font-semibold text-red-500">
-                -{discount}%
-              </span>
+            {Number(averageRating) % 1 !== 0 && <span>&#9734;</span>}
+          </div>
+          <span className="text-sm text-gray-600 ml-2">
+            {reviews ? reviews.length : 0} reviews
+          </span>
+        </div>
+        <div className="flex justify-between items-center mt-3">
+          <div>
+            <span className="text-lg font-semibold text-gray-800">
+              ${discountedPrice}
+            </span>
+            {discountPercent && (
+              <>
+                <span className="text-sm line-through text-gray-500 ml-2">
+                  ${price.toFixed(2)}
+                </span>
+                <span className="ml-2 text-sm font-semibold text-red-500">
+                  -{discountPercent}%
+                </span>
+              </>
             )}
           </div>
           <div className="flex gap-2">
             <button
-              onClick={onAddToCart} // Call the handler
+              onClick={onAddToCart}
               className="text-green-600 hover:text-green-800"
             >
-              <AiOutlineShoppingCart size={20} />
+              <AiOutlineShoppingCart size={24} />
             </button>
             <button className="text-red-600 hover:text-red-800">
-              <AiOutlineHeart size={20} />
+              <AiOutlineHeart size={24} />
             </button>
           </div>
         </div>
+        {quantity !== undefined && (
+          <p className="mt-2 text-sm text-gray-600">
+            {quantity > 0 ? `${quantity} in stock` : "Out of stock"}
+          </p>
+        )}
       </div>
     </div>
   );

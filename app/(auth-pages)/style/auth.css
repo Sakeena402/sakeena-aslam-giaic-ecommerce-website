@@ -1,0 +1,29 @@
+/* auth.css */
+.auth-container {
+    display: flex;
+    height: 100vh;
+}
+
+.background {
+    flex: 1;
+    background-image: url('@/images/source.png'); /* Update with your image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-form {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+}
