@@ -43,7 +43,9 @@ export async function POST(req: NextRequest) {
         address: JSON.stringify(address),
         items: JSON.stringify(items.map(item => ({
           id: item._id,
-          qty: item.quantity
+          qty: item.quantity,
+          color: item.selectedColor,
+          size: item.selectedSize,
         })))
       },
     });

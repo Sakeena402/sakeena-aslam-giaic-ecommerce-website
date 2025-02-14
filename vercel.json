@@ -1,0 +1,15 @@
+{
+    "functions": {
+      "app/api/webhook/route.ts": {
+        "memory": 3008,
+        "maxDuration": 30
+      }
+    },
+    "routes": [
+      {
+        "src": "/api/webhook",
+        "dest": "/app/api/webhook/route",
+        "methods": ["POST"]
+      }
+    ]
+  }

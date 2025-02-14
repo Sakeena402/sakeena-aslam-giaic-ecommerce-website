@@ -1,4 +1,3 @@
-import { User } from "@/components/types";
 
 const ProfileSidebar = () => {
   return (

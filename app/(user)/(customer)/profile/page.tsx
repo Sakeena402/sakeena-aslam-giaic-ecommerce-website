@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import ProfileDetails from "../../../components/ProfileInfo";
 import ProfileSidebar from "../../../components/ProfileSidebar";
 import { getUserData } from '@/helpers/getUserData';
+import { Address } from './types';
 
 const initialAddresses = {
   shipping: { street: "", city: "", state: "", zipCode: "", country: "" },
@@ -14,10 +15,12 @@ const initialAddresses = {
 };
 
 export default function ProfilePage() {
-  const [user, setUser] = useState({ id: "", name: "", email: "", phoneNo: "", token: "" });
-  const [addresses, setAddresses] = useState(initialAddresses);
+  const [user, setUser] = useState({ id: "",profileImage:"", name: "", email: "", phoneNo: "", token: "" });
+
+  
+const [addresses, setAddresses] = useState<{ shipping: Address; billing: Address }>(initialAddresses);
+const [editedAddress, setEditedAddress] = useState<Address>(initialAddresses.shipping);
   const [editingType, setEditingType] = useState<"shipping" | "billing" | null>(null);
-  const [editedAddress, setEditedAddress] = useState(initialAddresses.shipping);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -25,6 +28,7 @@ export default function ProfilePage() {
       if (data) {
         setUser({
           id: data.id,
+          profileImage:data.profileImage || "https://static.vecteezy.com/ti/vecteur-libre/p1/36594092-homme-vide-avatar-vecteur-photo-espace-reserve-pour-social-les-reseaux-reprend-forums-et-sortir-ensemble-des-sites-masculin-et-femelle-non-photo-images-pour-non-rempli-utilisateur-profil-gratuit-vectoriel.jpg",    
           name: data.username,
           email: data.email,
           phoneNo: data.phoneNo,
@@ -63,10 +67,12 @@ export default function ProfilePage() {
     setEditingType(type);
     setEditedAddress(addresses[type]);
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEditedAddress((prev) => ({ ...prev, [name]: value }));
+    setEditedAddress((prev) => ({
+      ...prev,
+      [name as keyof Address]: value,
+    }));
   };
   const handleSave = async () => {
     if (!editingType || !user.token) return;
@@ -110,24 +116,23 @@ export default function ProfilePage() {
 
         <div className="bg-white p-6  mt-6">
           <h2 className="text-xl font-semibold mb-4">Addresses</h2>
-
-          {["shipping", "billing"].map((type) => (
+          {(["shipping", "billing"] as ("shipping" | "billing")[]).map((type) => (
   <div key={type} className="mb-6">
     <h3 className="text-lg font-medium capitalize">{type} Address</h3>
 
     {editingType === type ? (
       <div className="grid grid-cols-2 gap-4 mt-2">
-        {Object.keys(initialAddresses.shipping).map((field) => (
-          <input
-            key={field}
-            type="text"
-            name={field}
-            value={editedAddress[field]}
-            onChange={handleChange}
-            className="border p-2 rounded w-full"
-            placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-          />
-        ))}
+        {(Object.keys(initialAddresses.shipping) as (keyof Address)[]).map((field) => (
+  <input
+    key={field}
+    type="text"
+    name={field}
+    value={editedAddress[field]}
+    onChange={handleChange}
+    className="border p-2 rounded w-full"
+    placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+  />
+))}
         <button
           onClick={handleSave}
           className="bg-green-600 text-white py-2 px-4 rounded mt-2"

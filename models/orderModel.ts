@@ -38,6 +38,8 @@
   
 //   const Order = mongoose.models.order || mongoose.model('order', orderSchema);
 //   export default Order;
+
+
 import mongoose, { Document, Schema, Types } from 'mongoose';
 
 export interface IOrder extends Document {
@@ -46,13 +48,14 @@ export interface IOrder extends Document {
     productId: string;
     quantity: number;
     price: number;
+    selectedColor: string; // New field
+    selectedSize: string;  // New field
   }[];
   totalAmount: number;
   paymentStatus: 'Pending' | 'Paid' | 'Failed';
   orderStatus: 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
   shipment?: Types.ObjectId;
 }
-
 const orderSchema = new Schema(
   {
     customer: { type: mongoose.Schema.Types.ObjectId, ref: 'user', required: true },
@@ -61,6 +64,8 @@ const orderSchema = new Schema(
         productId: { type: String, required: true },
         quantity: { type: Number, required: true },
         price: { type: Number, required: true },
+        selectedColor: { type: String, required: true }, // New field
+        selectedSize: { type: String, required: true }   // New field
       },
     ],
     totalAmount: { type: Number, required: true },

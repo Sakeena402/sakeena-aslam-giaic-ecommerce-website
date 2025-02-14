@@ -1,20 +1,38 @@
-//app/api/auth/logout
-import { NextResponse } from "next/server";
-export async function GET() {
-    try {
-        const response=NextResponse.json({
-            message:'Logout Successfull',
-            success:true
-        })
-        response.cookies.set("token","",{
-            httpOnly:true,
-            expires:new Date(0)
+// app/api/auth/forgot-password/route.ts
+import connectDB from '@/dbConfig/dbConfig';
+import User from '@/models/userModel';
+import { NextResponse } from 'next/server';
+import { sendEmail } from '@/helpers/mailer';
 
-        } )
-        return response
-    } catch (error:any) {
-        return NextResponse.json({error:error.messager},
-            {status:500}
-        )
+connectDB();
+
+export async function POST(request: Request) {
+  try {
+    const { email } = await request.json();
+    
+    const user = await User.findOne({ email });
+    if (!user) {
+      return NextResponse.json(
+        { error: "User not found" },
+        { status: 404 }
+      );
     }
+
+    await sendEmail({
+      email,
+      emailType: "RESET",
+      userId: user._id.toString()
+    });
+
+    return NextResponse.json({
+      message: "Password reset email sent",
+      success: true
+    });
+
+  } catch (error: any) {
+    return NextResponse.json(
+      { error: error.message },
+      { status: 500 }
+    );
+  }
 }

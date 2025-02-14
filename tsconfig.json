@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "importData.js"
-  ],
+, "cache-handler.js"  ],
   "exclude": [
     "node_modules"
   ]

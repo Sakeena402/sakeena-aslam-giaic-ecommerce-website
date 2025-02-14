@@ -265,7 +265,9 @@ const CartPage = () => {
       alert('Please select size and color for all items before checkout');
       return;
     }
-    router.push(`/checkout?items=${encodeURIComponent(JSON.stringify(cart))}&addresses=${encodeURIComponent(addresses)}`);
+    router.push(
+      `/checkout?items=${encodeURIComponent(JSON.stringify(cart))}&addresses=${encodeURIComponent(JSON.stringify(addresses))}`
+    );
   };
 
   useEffect(() => {
@@ -499,7 +501,13 @@ console.log("address",addresses.shipping);
         Proceed to Checkout
       </button> */}
       
-       <CheckoutButton items={cart} userId={user.id} address={addresses} email={user.email} />
+    
+<CheckoutButton 
+  items={cart} 
+  userId={user.id} 
+  address={JSON.stringify(addresses)}  // Convert to string
+  email={user.email} 
+/>
           </div>
         </div>
       </div>

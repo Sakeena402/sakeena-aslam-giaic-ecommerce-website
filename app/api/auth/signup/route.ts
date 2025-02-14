@@ -1,4 +1,4 @@
-w// /app/api/auth/signup/route.ts (or your relevant path)
+// /app/api/auth/signup/route.ts (or your relevant path)
 import connectDB from '@/dbConfig/dbConfig';
 import User from '@/models/userModel';
 import { NextResponse, NextRequest } from 'next/server';

@@ -1,17 +1,19 @@
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
 import { getUserData } from "@/helpers/getUserData";
+import { useRouter } from "next/navigation";
 
 interface AuthContextType {
   user: any;
   setUser: (user: any) => void;
+  logout: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 // contexts/AuthContext.tsx
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<any>(null);
-
+  const router = useRouter();
   const fetchUser = async () => {
     try {
       const userData = await getUserData();
@@ -22,12 +24,35 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
+  
+  const logout = async () => {
+    try {
+      // Call logout API endpoint
+      await fetch('/api/auth/logout', { method: 'POST' });
+      
+      // Clear client-side state
+      setUser(null);
+      
+      // Redirect to login page
+      router.push('/login');
+      
+      // Optional: Refresh the page to clear any residual state
+      router.refresh();
+
+    } catch (error) {
+      console.error('Logout failed:', error);
+      // Even if API call fails, clear local state
+      setUser(null);
+      router.push('/login');
+    }
+  };
+
   useEffect(() => {
     fetchUser();
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{ user, setUser,logout  }}>
       {children}
     </AuthContext.Provider>
   );
