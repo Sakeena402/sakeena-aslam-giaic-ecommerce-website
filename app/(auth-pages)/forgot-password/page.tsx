@@ -1,9 +1,10 @@
 // app/forgot-password/page.tsx;;
 'use client'
 import React from "react";
-import GeneralForm from "@/components/forms/GeneralForm";
+
 import axios from "axios";
 import router from "next/router";
+import GeneralForm from "@/app/components/forms/GeneralForm";
 
 const ForgotPasswordPage = () => {
 

@@ -10,20 +10,63 @@ import ProductDetails from "@/app/components/ProductDetails";
 import ProductList from "@/app/components/ProductList";
 import RatingReviews from "@/app/components/RatingReviews";
 import SizeSelector from "@/app/components/SizeSelector";
+import { useCart } from "@/contexts/CartContext";
+import { urlFor } from "@/sanity/lib/image";
 
+
+// Sanity API Fetcher
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 
 const ProductPage: React.FC = () => {
-  const [selectedColor, setSelectedColor] = useState<string>("brown");
-  const [selectedSize, setSelectedSize] = useState<string>("Large");
+  const { addToCart } = useCart();
+  const { slug } = useParams(); // Get slug from URL
+  const { data: product, error } = useSWR(`/api/products/${slug}`, fetcher);
+
+  const [selectedColor, setSelectedColor] = useState<string>("");
+  const [selectedSize, setSelectedSize] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(1);
 
-  const incrementQuantity = () => setQuantity((prev) => prev + 1);
-  const decrementQuantity = () => {
-    if (quantity > 1) setQuantity((prev) => prev - 1);
-  };
 
-  const product = {
+  const { data: products, } = useSWR("/api/products", fetcher, { dedupingInterval: 60000 });
+
+  if (!products) return <div>Loading...</div>;
+  if (error) return <div>Error fetching products.</div>;
+// Sort and filter products
+const newArrivals = [...products]
+.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // Sort by newest
+.slice(0, 4); // Take top 4
+
+const topSelling = [...products]
+.sort((a, b) => (b.rating || 0) - (a.rating || 0)) // Sort by highest rating
+.slice(0, 4); // Take top 4
+
+  if (error) return <p>Error loading product.</p>;
+  if (!product) return <p>Loading...</p>;
+
+  // Handle quantity change
+  const incrementQuantity = () => setQuantity((prev) => prev + 1);
+  const decrementQuantity = () => quantity > 1 && setQuantity((prev) => prev - 1);
+
+  // Handle size change and related logic
+  const handleSizeChange = (size: string) => setSelectedSize(size);
+  const handleAddToCart = () => {
+    if (!selectedSize || !selectedColor) {
+      alert("Please select size and color before adding to cart.");
+      return;
+    }
+  
+    const productToAdd = {
+      ...product,
+      selectedSize,
+      selectedColor,
+      quantity, // Quantity selected by user
+    };
+  
+    addToCart(productToAdd);
+  };
+  
+  const p = {
     title: "ONE LIFE GRAPHIC T-SHIRT",
     price: 260,
     discount: 40,
@@ -75,55 +118,49 @@ const ProductPage: React.FC = () => {
       },
     ],
   };
-
-  // Change image or details dynamically based on size
-  const handleSizeChange = (size: string) => {
-    setSelectedSize(size);
-    // Example logic to change image based on size
-    if (size === "Small") setSelectedColor("blue"); // Change to an appropriate image
-    else if (size === "Medium") setSelectedColor("green");
-    else setSelectedColor("brown");
-  };
-
+  // In ProductPage component
+if (!product) return (
+  <div className="container mx-auto p-4">
+    <div className="animate-pulse space-y-4">
+      <div className="h-6 bg-gray-200 rounded w-1/4"></div>
+      {/* Add more skeleton elements */}
+    </div>
+  </div>
+);
   return (
     <div className="container mx-auto p-4">
           <div className="w-full p-6">
           <BreadCrumbs
-  breadcrumbs={[
-    { name: "Home", link: "/" },
-    { name: "Shop", link: "/Shop" },
-    { name: "Men", link: "/Men" },
-    { name: "T-Shirt" } // No link for the last breadcrumb
-  ]}
-/>
-
-              </div>
+          breadcrumbs={[
+            { name: "Home", link: "/" },
+            { name: "Shop", link: "/Shop" },
+            { name: product.category, link: `/Shop/${product.category}` },
+            { name: product.name },
+          ]}
+        />
+   </div>
       {/* Responsive Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Image Gallery */}
         <div className="flex justify-center">
-          <ImageGallery images={product.images} />
+        <ImageGallery images={product.images} />
         </div>
 
         {/* Product Info Section */}
         <div className="flex flex-col space-y-4">
           {/* Product Details */}
           <ProductDetails
-            title={product.title}
+            title={product.name}
             price={product.price}
-            discount={product.discount}
+            discount={product.discountPercent}
             description={product.description}
-            rating={product.rating}
+            rating={product.ratings?.length ? product.ratings.reduce((a: number, b: number) => a + b) / product.ratings.length : 0}
           />
 
           {/* Color and Size Selection */}
           <div className="flex flex-col gap-4 border-t pt-4">
-            <ColorSelector
-              colors={product.colors}
-              selectedColor={selectedColor}
-              onSelect={setSelectedColor}
-            />
-            <SizeSelector
+          <ColorSelector colors={product.colors} selectedColor={selectedColor.toLowerCase()} onSelect={setSelectedColor} />
+           <SizeSelector
               sizes={product.sizes}
               selectedSize={selectedSize}
               onSelect={handleSizeChange}
@@ -150,7 +187,7 @@ const ProductPage: React.FC = () => {
             </div>
 
             {/* Add to Cart Button */}
-            <button className="w-full sm:w-3/5 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition">
+            <button onClick={handleAddToCart} className="w-full sm:w-3/5 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition">
               Add to Cart
             </button>
           </div>
@@ -159,12 +196,12 @@ const ProductPage: React.FC = () => {
 
       {/* Reviews Section */}
       <div className="mt-8">
-        <RatingReviews reviews={product.reviews} />
+        <RatingReviews reviews={p.reviews} />
         
       </div>
       <div className="mt-8">
         <br /> <br />
-      <ProductList products={product} title="YOU MIGHT ALSO LIKE" />
+      <ProductList products={topSelling} title="YOU MIGHT ALSO LIKE" />
       <br />
       <br />
       </div>
@@ -173,3 +210,9 @@ const ProductPage: React.FC = () => {
 };
 
 export default ProductPage;
+
+
+
+
+
+

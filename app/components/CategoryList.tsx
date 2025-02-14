@@ -129,19 +129,34 @@ const CategoryList: React.FC<ProductListProps> = ({
   const totalPages = Math.ceil(products.length / productsPerPage);
 
   // Handle sorting
+  // const sortedProducts = [...products].sort((a, b) => {
+  //   switch (sortOption) {
+  //     case "price_low_to_high":
+  //       return a.price - b.price;
+  //     case "price_high_to_low":
+  //       return b.price - a.price;
+  //     case "ratings":
+  //       return b.ratings - a.ratings;
+  //     default:
+  //       return 0;
+  //   }
+  // });
   const sortedProducts = [...products].sort((a, b) => {
+    const avgRatingA = a.ratings ? a.ratings.reduce((sum, r) => sum + r, 0) / a.ratings.length : 0;
+    const avgRatingB = b.ratings ? b.ratings.reduce((sum, r) => sum + r, 0) / b.ratings.length : 0;
+  
     switch (sortOption) {
       case "price_low_to_high":
         return a.price - b.price;
       case "price_high_to_low":
         return b.price - a.price;
       case "ratings":
-        return b.ratings - a.ratings;
+        return avgRatingB - avgRatingA; // Compare average ratings
       default:
         return 0;
     }
   });
-
+  
   const startIndex = (currentPage - 1) * productsPerPage;
   const paginatedProducts = sortedProducts.slice(
     startIndex,

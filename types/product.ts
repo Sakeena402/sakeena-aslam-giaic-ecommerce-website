@@ -16,8 +16,11 @@ export interface Product {
    category: "t-shirt" | "short" | "jeans" | "hoodie" | "shirt"; // Specific values from the options
    discountPercent?: number; // Optional
    new?: boolean; // Optional
-   colors: string[]; // Array of strings
-   sizes: string[]; // Array of strings
+   selectedSize?: string;
+   selectedColor?: string;
+   sizes: string[]; // Ensure these are included
+   colors: string[]; // Ensure these are included
+   quantity:number;
    slug: {
      current: string; // Slug linked to the product name
    };

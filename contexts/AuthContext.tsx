@@ -8,20 +8,23 @@ interface AuthContextType {
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
+// contexts/AuthContext.tsx
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<any>(null);
 
   const fetchUser = async () => {
-  const userData = await getUserData();
-  setUser(userData);
-};
+    try {
+      const userData = await getUserData();
+      setUser(userData);
+    } catch (error) {
+      console.error("Authentication check failed:", error);
+      setUser(null);
+    }
+  };
 
-// Fetch user on mount
-useEffect(() => {
-  fetchUser();
-}, []);
-
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>

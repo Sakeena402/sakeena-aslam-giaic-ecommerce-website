@@ -1,7 +1,7 @@
 import connectDB from "@/dbConfig/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
 import User from "@/models/userModel";
-export const runtime = 'node';
+export const runtime = 'nodejs';
 // Ensure the database is connected
 connectDB();
 

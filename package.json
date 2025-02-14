@@ -36,7 +36,7 @@
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.469.0",
     "mongoose": "^8.9.6",
-    "next": "14.2.20",
+    "next": "^15.1.6",
     "next-auth": "^4.24.11",
     "next-sanity": "^9.8.42",
     "node-fetch": "^2.7.0",

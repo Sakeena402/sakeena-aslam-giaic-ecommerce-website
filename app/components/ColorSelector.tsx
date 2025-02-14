@@ -16,8 +16,8 @@ const ColorSelector: React.FC<ColorSelectorProps> = ({ colors, selectedColor, on
         <button
           key={color}
           onClick={() => onSelect(color)}
-          className={`w-8 h-8 rounded-full  ${
-            selectedColor === color ? "ring-2 ring-black" : ""
+          className={`w-8 h-8 m-2 rounded-full  ${
+            selectedColor === color ? "ring-4 ring-black" : "ring-4 ring-gray-200 "
           }`}
           style={{ backgroundColor: color }}
         />

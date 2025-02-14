@@ -27,20 +27,20 @@ const StyleSection = (props: Props) => {
 xl:col-span-5
 
       */}
-      <div className="grid md:grid-cols-6 md:grid-rows-2 grid-cols-1 grid-rows-4 overflow-x-hidden gap-4 p-8 ">
+      <div className="grid md:grid-cols-6 md:grid-rows-2   grid-cols-1 grid-rows-4 overflow-x-hidden gap-4 p-6 ">
         {/* First Row */}
         <div className="  md:col-span-2 row-span-1">
           <Card
             name={dressStyleData[0].name}
             backgroundImage={dressStyleData[0].backgroundImage}
-            customStyles="lg:w-80 lg:h-72 h-72   rounded-2xl"
+            customStyles="lg:w-80 lg:h-72 h-72 xl:w-96 xl:h-80 rounded-2xl"
           />
         </div>
         <div className=" md:col-span-4 row-span-1 ">
           <Card
             name={dressStyleData[1].name}
             backgroundImage={dressStyleData[1].backgroundImage}
-            customStyles="'lg:w-[56rem] lg:h-72 h-72    rounded-2xl"
+            customStyles="'lg:w-[56rem] lg:h-72 h-72  xl:h-80 xl:w-[54rem]   rounded-2xl"
           />
         </div>
 
@@ -49,14 +49,14 @@ xl:col-span-5
           <Card
             name={dressStyleData[2].name}
             backgroundImage={dressStyleData[2].backgroundImage}
-            customStyles="lg:w-[43rem] lg:h-72 h-72   rounded-2xl"
+            customStyles="lg:w-[43rem] lg:h-72 h-72 xl:h-80 xl:w-[54rem]   rounded-2xl"
           />
         </div>
         <div className="  md:col-span-2 row-span-1">
           <Card
             name={dressStyleData[3].name}
             backgroundImage={dressStyleData[3].backgroundImage}
-            customStyles="lg:w-80 lg:h-72 h-72 rounded-2xl"
+            customStyles="lg:w-80 lg:h-72 h-72 xl:w-96 xl:h-80 rounded-2xl"
           />
         </div>
       </div>

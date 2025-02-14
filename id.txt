@@ -1,3 +1,121 @@
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+import { useRouter, useSearchParams } from 'next/navigation';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY || '');
+
+const Checkout = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [loading, setLoading] = useState(false);
+
+  const items = JSON.parse(searchParams.get('items') || '[]');
+  const address = searchParams.get('address');
+
+  const handleCheckout = async () => {
+    setLoading(true);
+    const stripe = await stripePromise;
+
+    const response = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items, address }),
+    });
+
+    const session = await response.json();
+
+    if (stripe) {
+      await stripe.redirectToCheckout({ sessionId: session.id });
+    }
+  };
+
+  return (
+    <div>
+      <h1>Checkout Page</h1>
+      <p>Shipping Address: {address}</p>
+      {items.map((item:any) => (
+        <p key={item._id}>{item.name} - ${item.price} x {item.quantity}</p>
+      ))}
+      <button
+        onClick={handleCheckout}
+        disabled={loading}
+        className={`w-full py-2 rounded-full mt-4 ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-black text-white'}`}
+      >
+        {loading ? 'Processing...' : 'Confirm & Pay'}
+      </button>
+      <br /><br /><br />
+    </div>
+  );
+};
+
+export default Checkout;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
     "query": "*[_type == \"products\"]{ _id, name, slug, price, description, images[] { asset->{ _id, url, metadata { dimensions { width, height } } } }, reviews[]->{ _id, title, content }, ratings, quantity, category, discountPercent, new, colors, sizes, comments, tags }",
     "result": [

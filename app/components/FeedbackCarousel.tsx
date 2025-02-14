@@ -19,7 +19,7 @@ export function CustomerFeedbackCarousel({ reviews }: CustomerFeedbackCarouselPr
       <h2 className="text-4xl md:text-4xl lg:text-5xl font-extrabold text-black tracking-tighter leading-tight text-start mb-4">
         OUR HAPPY CUSTOMERS
       </h2>
-      <div className="w-full max-w-6xl   px-2 py-8 relative  "> {/* Center the carousel */}
+      <div className="w-full max-w-6xl  xl:left-[5%] xl:max-w-[86rem]  px-2 py-8 relative  "> {/* Center the carousel */}
         <Carousel opts={{ align: "start" }} className="w-full  flex overflow-x-hidden sm:space-x-4 space-x-2">
           <CarouselContent>
             {reviews.map((review, index) => (

@@ -1,11 +1,11 @@
-// /app/api/auth/signup/route.ts (or your relevant path)
+w// /app/api/auth/signup/route.ts (or your relevant path)
 import connectDB from '@/dbConfig/dbConfig';
 import User from '@/models/userModel';
 import { NextResponse, NextRequest } from 'next/server';
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { sendEmail } from '@/helpers/mailer';
-export const runtime = 'node';
+export const runtime = 'nodejs';
 
 connectDB();
 
