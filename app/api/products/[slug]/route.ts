@@ -28,6 +28,7 @@
 //     return NextResponse.json({ error: "Failed to fetch product" }, { status: 500 });
 //   }
 // }
+
 // app/api/products/[slug]/route.ts
 import { NextResponse } from "next/server";
 import { client } from "@/sanity/lib/client";
