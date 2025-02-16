@@ -37,7 +37,7 @@ const query = `
 export async function GET() {
   try {
     const products = await client.fetch(query);
-    console.log(products);
+
     return NextResponse.json(products); 
     
   } catch (error) {

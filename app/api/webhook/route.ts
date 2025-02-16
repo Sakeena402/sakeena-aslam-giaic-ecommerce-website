@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     console.log('🔗 Webhook request received.');
     
     const sig = req.headers.get('stripe-signature') || '';
-    console.log('🔑 Received Stripe signature:', sig);
+   // console.log('🔑 Received Stripe signature:', sig);
 
     let event;
 
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: `Webhook Error: ${err.message}` }, { status: 400 });
     }
 
-    console.log(`🛠 Received event: ${event.type}`);
+    //console.log(`🛠 Received event: ${event.type}`);
 
     // route.ts
 if (event.type === 'checkout.session.completed') {
@@ -60,7 +60,7 @@ if (event.type === 'checkout.session.completed') {
   });
 
   await order.save();
-  console.log('✅ Order saved with variants:', order);
+ // console.log('✅ Order saved with variants:', order);
 }
 
     return NextResponse.json({ received: true });

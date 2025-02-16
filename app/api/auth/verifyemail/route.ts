@@ -10,8 +10,7 @@ export async function POST(request: NextRequest) {
         const reqBody = await request.json();
         const { token } = reqBody;
 
-        // Debug: Log the received token
-        console.log("Received token:", token);
+       
 
         // Find user with valid token and expiry time in the future
         const user = await User.findOne({
@@ -27,8 +26,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: "Invalid or expired token" }, { status: 400 });
         }
 
-        // Debug: Log the user object before updating
-        console.log("User found:", user);
+        
 
         // Update user verification status
         user.isVerified = true;
@@ -41,9 +39,9 @@ export async function POST(request: NextRequest) {
         //     { new: true } // Returns the updated document
         // );
         
-        console.log("Before save:", user);
+
         await user.save();
-        console.log("After save:", user);
+        
         
 
         return NextResponse.json({

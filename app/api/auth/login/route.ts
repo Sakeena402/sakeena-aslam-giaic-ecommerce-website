@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
             role: user.role
         };
         const token =  jwt.sign(tokenData, process.env.JWT_SECRET_KEY!, { expiresIn: '1d' });
-console.log(token);
+
         const response = NextResponse.json({
             message: "User login successfully",
             success: true,

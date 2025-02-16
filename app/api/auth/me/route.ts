@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
 
     const decodedToken: any = jwt.verify(token, process.env.JWT_SECRET_KEY!);
     const { id, role, username,email,phoneNo } = decodedToken;
-    console.log("me token :", token);
+  
 
     return NextResponse.json({ id, role, username,email,phoneNo,token});
   } catch (error) {

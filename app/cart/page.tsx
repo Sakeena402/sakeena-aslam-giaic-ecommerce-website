@@ -66,15 +66,12 @@
 //           phoneNo: data.phoneNo,
 //           token: data.token,
 //         });
-
-//         console.log("Fetched user data:", data);
 //         await fetchAddressData(data.token);
 //       }
 //     };
 
 //     fetchUserData();
 //   }, []);
-// console.log("address",addresses.shipping);
 //   const calculateSubtotal = () =>
 //     cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0);
 
@@ -306,14 +303,13 @@ const CartPage = () => {
           token: data.token,
         });
 
-        console.log("Fetched user data:", data);
         await fetchAddressData(data.token);
       }
     };
 
     fetchUserData();
   }, []);
-console.log("address",addresses.shipping);
+
   const calculateSubtotal = () =>
     cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0);
 
