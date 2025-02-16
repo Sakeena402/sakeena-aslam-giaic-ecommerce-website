@@ -32,6 +32,11 @@ export default function Cancel() {
           </Link>
         </div>
       </div>
+      <br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br />
     </main>
   )
 }

@@ -102,6 +102,7 @@ const Page = (props: Props) => {
             <FilterBox isVisible={true} onClose={() => setFilterVisible(false)} />
           </div>
         </div>
+        
       )}
 
       {/* Animation for sliding up */}
@@ -115,6 +116,11 @@ const Page = (props: Props) => {
           }
         }
       `}</style>
+<br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br /><br />
     </div>
   );
 };

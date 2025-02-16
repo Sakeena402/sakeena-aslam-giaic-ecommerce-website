@@ -34,6 +34,9 @@ export default function PasswordResetSuccess() {
           Return to Login
         </Link> */}
       </div>
+      <br />
+<br /><br /><br /><br />
+<br /><br /><br />
     </div>
   );
 }

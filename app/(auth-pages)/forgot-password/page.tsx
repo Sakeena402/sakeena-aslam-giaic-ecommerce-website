@@ -58,6 +58,9 @@ const ForgotPasswordPage = () => {
           </Link>
         </div>
       </div>
+      <br />
+<br /><br /><br /><br />
+<br /><br /><br />
     </div>
   );
 };

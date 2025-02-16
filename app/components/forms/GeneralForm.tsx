@@ -58,6 +58,7 @@ const GeneralForm: React.FC<GeneralFormProps> = ({
 
     try {
       await onSubmit(formData);
+      
     } catch (error) {
       console.error(error);
     } finally {

@@ -242,6 +242,9 @@ const ResetPasswordContent = () => {
                     </Link>
                 </div>
             </div>
+            <br />
+<br /><br /><br /><br />
+<br /><br /><br />
         </div>
     );
 };

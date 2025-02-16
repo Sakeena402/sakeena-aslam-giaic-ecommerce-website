@@ -91,6 +91,9 @@ const resendVerificationEmail = async () => {
           </Button>
         </div>
       )}
+      <br />
+<br /><br /><br /><br />
+<br /><br /><br />
     </div>
   );
 }

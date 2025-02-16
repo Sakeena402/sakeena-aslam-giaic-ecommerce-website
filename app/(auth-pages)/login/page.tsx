@@ -6,12 +6,13 @@ import { useRouter } from 'next/navigation';
 import GeneralForm from "@/app/components/forms/GeneralForm";
 import { useAuth } from "@/contexts/AuthContext";
 import Link from "next/link";
+import { useCart } from "@/contexts/CartContext";
 
 const LoginPage = () => {
   const [loginError, setLoginError] = useState<string | null>(null);
   const { setUser } = useAuth();
   const router = useRouter();
-
+  const { fetchUserData } = useCart();
   const onLogin = async (formData: Record<string, string>) => {
     try {
       const { email, password } = formData;
@@ -35,10 +36,10 @@ const LoginPage = () => {
 
       // Update global user authentication state
       setUser(user);
-
+   
       // Redirect based on role
       router.push(user.role === "Admin" ? '/admin-dashboard' : '/profile');
-
+      await fetchUserData()
     } catch (error: any) {
       if (error.response) {
         switch (error.response.status) {
@@ -82,7 +83,9 @@ const LoginPage = () => {
         validationSchema={loginSchema}
         errorMessage={loginError}
       />
-      
+      <br />
+<br /><br /><br /><br />
+<br /><br /><br />
     </div>
   );
 };
