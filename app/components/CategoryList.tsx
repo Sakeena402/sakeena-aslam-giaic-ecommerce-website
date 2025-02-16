@@ -216,6 +216,17 @@ const CategoryList: React.FC<ProductListProps> = ({
           onPageChange={handlePageChange}
         />
       </div>
+      <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
     </section>
   );
 };
