@@ -50,7 +50,7 @@ const Page = (props: Props) => {
       <BreadCrumbs
   breadcrumbs={[
     { name: "Home", link: "/" },
-    { name: "Components", link: "/components" },
+    { name: "Products", link: "/category" },
     { name: "Casual" } // No link for the last breadcrumb
   ]}
 />

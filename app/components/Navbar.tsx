@@ -72,7 +72,7 @@ useEffect(() => {
         {/* Navigation Links */}
         <div className="hidden md:flex flex-1 justify-center space-x-4">
           <Link href="/" className="text-black hover:text-gray-600 transition duration-300">Shop</Link>
-          <Link href="/sale" className="text-black hover:text-gray-600 transition duration-300">On Sale</Link>
+          <Link href="/category" className="text-black hover:text-gray-600 transition duration-300">On Sale</Link>
           <Link href="/category" className="text-black hover:text-gray-600 transition duration-300">New Arrivals</Link>
           <Link href="/products" className="text-black hover:text-gray-600 transition duration-300">Brands</Link>
         </div>
@@ -84,12 +84,12 @@ useEffect(() => {
           </div>
 
           <button className="md:hidden">
-            <FaSearch className="text-gray-800 h-6 w-6 cursor-pointer" />
+            <FaSearch className="text-gray-800 sm:h-6 sm:w-6 h-4 w-4 cursor-pointer" />
           </button>
 
           {/* Cart Icon */}
           <Link href={user ? "/cart" : "/login"} className="relative">
-            <FaShoppingCart className="text-gray-800 h-6 w-6 cursor-pointer" />
+            <FaShoppingCart className="text-gray-800 sm:h-6 sm:w-6 h-4 w-4 cursor-pointer" />
             {user && totalItems > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 {totalItems}
@@ -100,12 +100,12 @@ useEffect(() => {
           {/* Notification Icon */}
           {user ? (
             <button onClick={toggleNotifications} className="relative">
-              <FaBell className="text-gray-800 h-6 w-6 cursor-pointer" />
+              <FaBell className="text-gray-800 sm:h-6 sm:w-6 h-4 w-4 cursor-pointer" />
               <ToastContainer />
             </button>
           ) : (
             <button onClick={handleLoginClick}>
-              <FaBell className="text-gray-800 h-6 w-6 cursor-pointer" />
+              <FaBell className="text-gray-800 sm:h-6 sm:w-6 h-4 w-4 cursor-pointer" />
             </button>
           )}
 
@@ -113,14 +113,18 @@ useEffect(() => {
           {user ? (
             <div className="flex items-center space-x-2">
               <button onClick={() => router.push("/profile")}>
-                <FaUserCircle className="text-gray-800 h-6 w-6 cursor-pointer" />
+                <FaUserCircle className="text-gray-800 sm:h-6 sm:w-6 h-4 w-4 cursor-pointer" />
               </button>
              <LogoutButton/>
             </div>
           ) : (
-            <button className="px-8 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition" onClick={handleLoginClick}>
-              Login
-            </button>
+            <button 
+  className="md:px-8 md:py-2 md:text-lg px-6 py-1 text-sm bg-black text-white rounded-full hover:bg-gray-800 transition" 
+  onClick={handleLoginClick}
+>
+  Login
+</button>
+
           )}
         </div>
       </div>

@@ -64,7 +64,7 @@ const topSelling = [...products]
       {/* Row 6: Section 4 */}
      
       {/* p-4 sm:p-6 md:p-8 lg:p-10 w-2/4 sm:w-[65%] md:w-3/4 lg:w-full */}
-      <div className="row-span-1 overflow-x-hidden flex justify-center  bg-white p-4  ">
+      <div className="row-span-1 overflow-x-hidden flex   bg-white p-2  ">
   <CustomerFeedbackCarousel reviews={reviews} />
 </div>
 <br />
