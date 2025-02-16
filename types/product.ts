@@ -4,12 +4,13 @@ export interface Product {
    name: string;
    price: number;
    description: string;
-   images: {
-     asset:  {
-       _ref: string;
-       _type: string;
-     };
-   }[];
+  //  images: {
+  //    asset:  {
+  //      _ref: string;
+  //      _type: string;
+  //    };
+  //  }[];
+  images: { asset: { url: string } }[];
    reviews: Review[]; // Array of references to the `Review` type
    ratings: number[]; // Array of numbers
    stockQuantity: number;

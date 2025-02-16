@@ -24,9 +24,9 @@ export const Notifications = () => {
       <h3 className="text-lg font-bold mb-4">New Products</h3>
       <ul className="space-y-2">
         {newProducts.map((product) => (
-          <li key={product._id} className="border-b pb-2">
-            <strong>{product.name}</strong>
-            <p>{product.description}</p>
+          <li key={product} className="border-b pb-2">
+            <strong>{product}</strong>
+        
           </li>
         ))}
       </ul>

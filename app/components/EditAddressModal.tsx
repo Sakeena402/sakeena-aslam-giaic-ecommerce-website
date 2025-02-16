@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Address } from "@/components/types";
+import { Address } from "../(user)/(customer)/profile/types";
+
 
 const EditAddressModal = ({
   isOpen,
@@ -41,14 +42,7 @@ const EditAddressModal = ({
           onChange={handleChange}
           className="border w-full p-2 mb-2"
         />
-        <input
-          type="text"
-          name="apartment"
-          placeholder="Apartment"
-          value={formData.apartment}
-          onChange={handleChange}
-          className="border w-full p-2 mb-2"
-        />
+      
         <input
           type="text"
           name="city"
@@ -69,7 +63,7 @@ const EditAddressModal = ({
           type="text"
           name="postalCode"
           placeholder="Postal Code"
-          value={formData.postalCode}
+          value={formData.zipCode}
           onChange={handleChange}
           className="border w-full p-2 mb-2"
         />
@@ -81,14 +75,7 @@ const EditAddressModal = ({
           onChange={handleChange}
           className="border w-full p-2 mb-2"
         />
-        <input
-          type="text"
-          name="phoneNumber"
-          placeholder="Phone Number"
-          value={formData.phoneNumber}
-          onChange={handleChange}
-          className="border w-full p-2 mb-2"
-        />
+    
         <button
           onClick={handleSave}
           className="bg-blue-600 text-white px-4 py-2 mt-2"

@@ -1,7 +1,8 @@
+import { Product } from '@/types/product';
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.NEXT_STRIPE_SECRET_KEY || '', { apiVersion: '2023-10-16' });
+const stripe = new Stripe(process.env.NEXT_STRIPE_SECRET_KEY || '', { apiVersion: process.env.NEXT_STRIPE_API_VERSION as Stripe.LatestApiVersion });
 
 export async function POST(req: NextRequest) {
   try {
@@ -41,7 +42,7 @@ export async function POST(req: NextRequest) {
       metadata: {
         userId,
         address: JSON.stringify(address),
-        items: JSON.stringify(items.map(item => ({
+        items: JSON.stringify(items.map((item:any)=> ({
           id: item._id,
           qty: item.quantity,
           color: item.selectedColor,

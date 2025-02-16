@@ -9,14 +9,16 @@ import { CustomerFeedbackCarousel } from "./components/FeedbackCarousel";
 import StyleSection from "./components/StyleSection";
 // import importProducts from '../data/importData'
 import useSWR from "swr";
+import SkeletonLoader from "./components/SkeletonLoader";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Home() {
   
   const { data: products, error } = useSWR("/api/products", fetcher, { dedupingInterval: 60000 });
 
-  if (!products) return <div>Loading...</div>;
+  if (!products) return <SkeletonLoader />;
   if (error) return <div>Error fetching products.</div>;
+  
 // Sort and filter products
 const newArrivals = [...products]
 .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // Sort by newest

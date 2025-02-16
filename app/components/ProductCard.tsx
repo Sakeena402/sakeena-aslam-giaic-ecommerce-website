@@ -160,13 +160,13 @@ import Link from "next/link";
 import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 
 export type ProductCardProps = {
-  id: string;
+  _id: string; // Changed from 'id' to match Sanity's '_id'
   name: string;
   slug: { current: string };
   price: number;
   description: string;
   images: { asset: { url: string } }[];
-  reviews: { _ref: string }[];
+  reviews: any[]; // Simplified review type
   ratings: number[];
   quantity: number;
   category: string;
@@ -174,8 +174,8 @@ export type ProductCardProps = {
   new?: boolean;
   colors: string[];
   sizes: string[];
-  comments: string[];
-  tags: string[];
+  comments?: string[]; // Made optional
+  tags?: string[]; // Made optional
   onAddToCart?: () => void;
 };
 
