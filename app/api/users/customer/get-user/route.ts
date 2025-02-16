@@ -56,22 +56,22 @@ export async function PUT(request: NextRequest) {
     }
 }
 
-// ✅ 3️⃣ GET_ORDERS: Retrieve user order history
-export async function GET_ORDERS(request: NextRequest) {
-    try {
-        const userId = request.cookies.get('userId');
-        if (!userId) {
-            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-        }
+// // ✅ 3️⃣ GET_ORDERS: Retrieve user order history
+// export async function GET_ORDERS(request: NextRequest) {
+//     try {
+//         const userId = request.cookies.get('userId');
+//         if (!userId) {
+//             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+//         }
 
-        const user = await User.findById(userId).populate('orders');
-        if (!user) {
-            return NextResponse.json({ error: 'User not found' }, { status: 404 });
-        }
+//         const user = await User.findById(userId).populate('orders');
+//         if (!user) {
+//             return NextResponse.json({ error: 'User not found' }, { status: 404 });
+//         }
 
-        return NextResponse.json(user.orders, { status: 200 });
-    } catch (error) {
-        console.error('Error fetching order history:', error);
-        return NextResponse.json({ error: 'Server error' }, { status: 500 });
-    }
-}
+//         return NextResponse.json(user.orders, { status: 200 });
+//     } catch (error) {
+//         console.error('Error fetching order history:', error);
+//         return NextResponse.json({ error: 'Server error' }, { status: 500 });
+//     }
+// }

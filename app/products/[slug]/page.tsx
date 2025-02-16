@@ -238,7 +238,7 @@ const ProductPage: React.FC = () => {
   const params = useParams();
   const slug = params?.slug as string; // Fix: Ensure slug is correctly typed
 
-  const { data: product, error } = useSWR(slug ? `/api/products/${slug}` : null, fetcher);
+  const { data: product, error } = useSWR(slug ? `/api/product/${slug}` : null, fetcher);
   const { data: products } = useSWR("/api/products", fetcher, { dedupingInterval: 60000 });
 
   const [selectedColor, setSelectedColor] = useState<string>("");
