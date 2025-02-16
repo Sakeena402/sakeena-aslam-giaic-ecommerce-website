@@ -288,7 +288,7 @@ export default function ProfilePage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="container sm:mx-auto px-2 sm:px-6 py-6 flex m-6 flex-col lg:flex-row gap-4 lg:gap-8"
+      className="container sm:mx-auto px-2 sm:px-4 py-6 flex m-6 flex-col lg:flex-row gap-4 lg:gap-8"
     >
      
 
